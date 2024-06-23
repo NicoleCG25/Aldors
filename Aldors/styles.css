@@ -1,0 +1,190 @@
+/*Estilos globais*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /*Fonte padrão */
+}
+
+/*Cabeçalho*/
+.black-header {
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Logo no cabeçalho*/
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+/*Navegação */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/*Itens da lista de navegação */
+nav ul li {
+  margin-left: 20px;
+}
+
+/*Links na navegação */
+nav ul li a {
+  color: #fff;
+  text-decoration: none; /*Remove a sublinhado dos links*/
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #ccc; /*Altera a cor do texto dos links ao passar o mouse*/
+}
+
+/*Link ativo na navegação*/
+nav ul li a.active {
+  color: #6F2159; /* Cor diferente para destacar o link ativo */
+}
+
+/*Contêiner do carrossel*/
+.container-slider {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/*Contêiner das imagens no carrossel*/
+.container-images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /*Oculta as partes das imagens que estão fora do contêiner*/
+}
+
+/*Imagens no carrossel*/
+.slider {
+  opacity: 0; /* Inicialmente, as imagens são invisíveis */
+  transition: opacity .2s; /* Animação suave para a mudança de opacidade */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Garante que a imagem cubra todo o espaço do contêiner */
+}
+
+/*Imagem ativa no carrossel*/
+.slider.on {
+  opacity: 1; /* A imagem ativa é visível */
+}
+
+/*Botões de navegação no carrossel */
+#prev-button, #next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Ajusta a posição vertical dos botões */
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; /* Altera o cursor para indicar que os botões são clicáveis */
+  z-index: 2; /* Garante que os botões fiquem sobre as imagens */
+}
+
+/*Botão de 'anterior' */
+#prev-button {
+  left: 10px;
+  transform: translateY(-50%) rotate(180deg); /* Roda o botão para indicar direção de anterior */
+}
+
+/*Botão de 'próximo' */
+#next-button {
+  right: 10px;
+  transform: translateY(-50%); /* Ajusta a posição vertical */
+}
+
+/*Imagens dentro dos botões de navegação */
+#prev-button img, #next-button img {
+  width: 100%;
+  height: 100%;
+}
+
+/*Contêiner roxo*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; 
+  margin: 20px 0;
+}
+
+.container-home {
+  display: flex;
+  gap: 120px; 
+  margin: 20px 145px;
+  background-color: #6F2159;
+}
+
+.imagem-home {
+  margin: 0px 150px;
+}
+
+.titulo-home {
+  background-color: #6F2159;
+  height: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+
+}
+
+.sub-titulo-home {
+  background-color: #9F6B90;
+  width: 200px;
+}
+
+.assinatura-home {
+  background-color: #6F2159;
+  width: 200px;
+  margin: 0.1px 10px 5px;
+}
+
+.caa {
+  background-color: #6F2159;
+display: flex;
+}
+
+/*Links que atuam como contêineres */
+a.box {
+  background-color: #6F2159;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none; /* Remove sublinhado dos links */
+  transition: background-color 0.3s; /* Transição suave para mudança de cor */
+}
+
+/*Links ao passar o mouse */
+a.box:hover {
+  background-color: #8A2C6C; /* Cor diferente ao passar o mouse */
+}
