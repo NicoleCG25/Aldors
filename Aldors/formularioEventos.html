@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        .input, .inputs {
+            width: 100%;
+            padding: 8px;
+            margin: 4px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="form-section">
+            <label for="nomeEvento">Nome do Evento:</label>
+            <br />
+            <input type="text" name="nomeEvento" placeholder="Digite o nome do evento" id="nomeEvento" class="input">
+            <br /><br />
+
+            <label for="nomeAdmin">Nome do Administrador:</label>
+            <br />
+            <input type="text" name="nomeAdmin" placeholder="Digite o nome do administrador" id="nomeAdmin" class="input">
+            <br /><br />
+
+            <label for="areaEnsino">Área de Ensino:</label>
+            <br />
+            <select name="areaEnsino" id="areaEnsino" class="input">
+                <option value="">Selecione</option>
+                <option value="Opcao2">Opcao2</option>
+                <option value="Opcao1">Opcao3</option>
+                <option value="Opcao1">Opcao4</option>
+                <option value="Opcao1">Opcao5</option>
+            </select>
+            <br /><br />
+
+            <label for="categoria">Categoria:</label>
+            <br />
+            <select name="categoria" id="categoria" class="input">
+                <option value="">Selecione</option>
+                <option value="Opcao2">Opcao2</option>
+                <option value="Opcao1">Opcao3</option>
+                <option value="Opcao1">Opcao4</option>
+                <option value="Opcao1">Opcao5</option>
+            </select>
+            <br /><br />
+            
+            <label for="estado">Estado:</label>
+            <br />
+            <input type="text" name="estado" placeholder="Digite o estado" id="estado" class="input">
+            <br /><br />
+
+            <label for="cidade">Cidade:</label>
+            <br />
+            <input type="text" name="cidade" placeholder="Digite a cidade" id="cidade" class="input">
+            <br /><br />
+
+            <label for="bairro">Bairro:</label>
+            <br />
+            <input type="text" name="bairro" placeholder="Digite o bairro" id="bairro" class="input">
+            <br /><br />
+
+            <label for="descricao">Descrição:</label>
+            <br />
+            <textarea name="descricao" id="descricao" rows="4" placeholder="Digite uma breve descrição" class="input"></textarea>
+            <br /><br />
+        </div>
+    </form>
+</body>
+</html>
