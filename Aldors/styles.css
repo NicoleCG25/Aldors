@@ -189,6 +189,25 @@ a.box:hover {
   background-color: #8A2C6C;
 }
 
+.input, .inputs {
+  width: 62%;
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+
+.titulo-evento {
+  text-align: center;
+  background-color: #68475e;
+  width: 50%;
+  border-radius: 10px;
+  margin-left: 20%;
+}
+
+.fundo-evento {
+  background: linear-gradient(4.5rad,#d3d3d3, #6F2159);
+}
+
 .container2 {
   display: flex;
   justify-content: center;
@@ -198,6 +217,10 @@ a.box:hover {
   padding: 30px;
   background-color: #6F2159;
   border-radius: 10px;
+}
+
+.formulario-evento {
+  margin-left: 20%;
 }
 
 .hcolor {
