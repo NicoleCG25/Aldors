@@ -23,6 +23,40 @@ body {
   width: auto;
 }
 
+.rodape {
+  background-color: #000;
+}
+
+.logo-rodape {
+  margin-top: 2%;
+}
+
+.body-rodape {
+  display: flex;
+  color:#fff
+}
+
+.container-rodape-1{
+  margin-left: 5%;
+}
+
+.container-rodape-2 {
+  margin-left: 17%
+}
+
+.final-pagina {
+  text-align: center;
+  color: #fff;
+}
+
+.container-criador {
+  margin-left: 30%;
+}
+
+.fundo-home {
+  background-color: #000;
+}
+
 /* Navegação */
 nav ul {
   list-style-type: none;
@@ -288,4 +322,113 @@ a.box:hover {
   font-size: 60px;
   top: 150px;
   left: 10px;
+}
+
+
+/*---------------CLASSES DO EFEITO PARALLAX------------------------------*/
+
+
+/*Definindo o tamanho do parallax*/
+.efeito-parallax-criador {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*Estilizando o parallax*/
+.criador {
+  display: block;
+}
+
+/*Ajustando os paragrafos da pagina*/
+section.module p {
+  margin-bottom: 40px;
+}
+
+/*Utilizado para que o ultimo paragrafo não fique com a mesma margem dos outros*/
+section.module:last-child {
+  margin-bottom: 0;
+}
+
+/*Alterando os titulos*/
+section.module h2 {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+/*Movendo os conteudos dentro do parallax*/
+section.module.content {
+ padding: 40px 0;
+}
+
+/**/
+section.module.parallax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh !important;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+/**/
+section.module.parallax:after {
+  content: "";
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  z-index: 8;
+  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+}
+
+/*Colocando a imagem fixa no fundo*/
+section.module.parallax-1 {
+  background-image: url("img/070ac008728f5ba724c34395a87bafb3.jpg");
+}
+
+/*Colocando a imagem fixa no fundo*/
+section.module.parallax-2 {
+  background-image:url("img/070ac008728f5ba724c34395a87bafb3.jpg");
+}
+
+/**/
+section.module.parallax h1 {
+  color: #FFF;
+  text-align: center;
+  font-size: 78px;
+  z-index: 50;
+  text-transform: uppercase;
+}
+
+/**/
+@media all and (max-width: 820px) {
+  
+  /**/
+  section.module h2 {
+    font-size: 32px;
+  }
+
+  /**/
+  .module h2, p{
+    padding: 0 8px;
+  }
+
+  /**/
+  .container-criador{
+    margin:0;
+    padding:0;
+  }
+
+  /**/
+  section.module.parallax h1 {
+    font-size: 36px;
+  }
 }
