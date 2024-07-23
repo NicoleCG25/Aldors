@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Professores</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('../img/backgroundProfessores.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.1); /* Fundo semi-transparente para o menu */
+        }
+
+        .menu .logo {
+            width: 200px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .rectangle {
+            background: rgba(42, 39, 39, 0.5);
+            width: 1100px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .rectangle-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rectangle h1 {
+            color: white;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .filter-btn {
+            background: rgba(29, 27, 27, 0.7);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .white-line {
+            border-top: 1px solid white;
+            margin: 10px 0;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile-card {
+            display: inline-block;
+            width: 200px;
+            height: 290px;
+            background: rgba(111, 33, 89, 0.6);
+            border-radius: 20px;
+            margin: 10px;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .profile-card img {
+            width: 150px; /* Reduzido o tamanho da foto de perfil */
+            height: 120px; /* Reduzido o tamanho da foto de perfil */
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+
+        .profile-card .info {
+            background: rgba(159, 107, 144, 0.4);
+            width: 180px;
+            height: 20px;
+            border-radius: 20px;
+            margin: 5px auto;
+            line-height: 20px;
+            font-size: 12px; /* Diminuiu a fonte */
+        }
+
+        .profile-card .location {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .profile-card .city, .profile-card .neighborhood {
+            background: rgba(159, 107, 144, 0.4);
+            height: 20px;
+            border-radius: 20px;
+            line-height: 20px;
+            font-size: 12px; /* Diminuiu a fonte */
+        }
+
+        .profile-card .city {
+            width: 80px;
+        }
+
+        .profile-card .neighborhood {
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <img src="../img/logoo.png" alt="Logo" class="logo">
+        <ul>
+            <li><a href="#">Inicial</a></li>
+            <li><a href="#">Categorias</a></li>
+            <li><a href="#">Eventos</a></li>
+            <li><a href="#">Projetos Sociais</a></li>
+            <li><a href="#">Perfil</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="rectangle">
+            <div class="rectangle-header">
+                <h1>Professores de Danca</h1>
+                <button class="filter-btn">Filtrar por Estado e Cidade</button>
+            </div>
+            <div class="white-line"></div>
+
+            <div class="profile-container">
+
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="../img/fotousu.jpg" alt="Foto de Perfil">
+                    <div class="info">Nome</div>
+                    <div class="info">Telefone: (00) 0000-0000</div>
+                    <div class="info">Email: usuario@example.com</div>
+                    <div class="location">
+                        <div class="city">Cidade</div>
+                        <div class="neighborhood">Bairro</div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Repita o bloco acima para mais cartões de perfil -->
+        </div>
+    </div>
+</body>
+</html>
+
+
