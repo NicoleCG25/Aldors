@@ -13,24 +13,230 @@
   <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('../img/backgroundIndex.jpeg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu .logo {
+      width: 200px;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu ul li {
+      margin: 0 15px;
+    }
+
+    .menu ul li a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .header hr {
+      width: 100%;
+      margin: 10px auto;
+      border: 0;
+      border-top: 2px solid white;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, 310px);
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1300px;
+    }
+
+    .grid-item {
+      background: rgba(42, 39, 39, 0.7);
+      width: 322px;
+      height: 161px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .grid-item h2 {
+      color: white;
+      margin: 0;
+    }
+
+    .grid-item button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(111, 33, 89, 0.6);
+      color: white;
+      cursor: pointer;
+    }
+
+    .grid-item button:hover {
+      background: rgba(111, 33, 89, 0.8);
+    }
+
+    .container {
+      display: flex;
+      width: 80%;
+      margin: 50px auto;
+      background: #333;
+      color: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .left-section,
+    .right-section {
+      padding: 20px;
+    }
+
+    .left-section {
+      width: 60%;
+    }
+
+    .right-section {
+      width: 40%;
+      background: #444;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .number {
+      background: #d291bc;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+
+    .text {
+      font-size: 16px;
+    }
+
+    .rodape {
+      background-color: #010101;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .body-rodape {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container-rodape-1 {
+      width: 50%;
+    }
+
+    .container-rodape-2 {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .apresentacao-rodape,
+    .escrita-rodape,
+    .container-rodape-2 small {
+      font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    }
+
+    .redes-sociais {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .redes-sociais a {
+      margin: 0 5px;
+    }
+
+    .redes-sociais img {
+      width: 30px; /* Ajuste o tamanho das imagens das redes sociais conforme necessário */
+    }
+
+    hr {
+      border-color: white;
+    }
+
+    .final-pagina {
+      margin-top: 10px;
+    }
+    
+  </style>
 </head>
 
 <body>
 
-  <header class="black-header">
+  <div class="menu">
     <div class="logo">
-      <a href="index.html"><img src="../img/logo.jpg" alt="Logo"></a>
+      <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
     </div>
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html" class="active">Inicial</a></li>
-        <li><a href="categorias.html">Categorias</a></li>
+        <li><a href="categoria.html">Categorias</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="projetos.html">Projetos Sociais</a></li>
         <li><a href="perfil.html">Perfil</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
 
   <div class="container-slider">
     <div class="container-images">
@@ -114,6 +320,28 @@
       </section>
 
       <!----------Fim do Segundo Parallax---------------------------------------->
+      <div class="container">
+        <div class="left-section">
+          <h1>Encontre professores no país inteiro</h1>
+          <p>O sistema Aldors é a sua plataforma definitiva para encontrar professores de várias áreas artísticas em
+            todo o país. Se você está em busca de aprimorar suas habilidades em música, dança, artes plásticas, teatro
+            ou qualquer outra forma de expressão artística, aqui é o lugar certo para você.</p>
+        </div>
+        <div class="right-section">
+          <div class="feature">
+            <div class="number">1</div>
+            <div class="text">Permite a conexão entre professores e alunos</div>
+          </div>
+          <div class="feature">
+            <div class="number">2</div>
+            <div class="text">Divulga eventos e projetos sociais</div>
+          </div>
+          <div class="feature">
+            <div class="number">3</div>
+            <div class="text">Oferece curiosidades e quizzes</div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!----------Fim das apresentações----------------------------------------->
@@ -126,27 +354,30 @@
 
       <div class="container-rodape-1">
         <img class="logo-rodape" src="../img/logo.jpg" height="60" width="150">
-
         <br>
-
-        <p class="escrita-rodape"> <strong>Aldors-Sistema de Valorizacão da Arte e Cultura</strong> </p>
+        <p class="escrita-rodape"><strong>Aldors - Sistema de Valorização da Arte e Cultura</strong></p>
       </div>
-
 
       <div class="container-rodape-2">
         <br>
-        <strong class="apresentacao-rodape"> <small> Sobre nos</small> </strong>
-
+        <strong class="apresentacao-rodape"><small>Sobre nós</small></strong>
         <br>
-
-        <strong class=""> <small> Somos alunos do CEFET-MG...</small> </strong>
+        <strong class=""><small>Somos alunos do CEFET-MG...</small></strong>
+      </div>
+        <div class="redes-sociais">
+          <strong><small>Redes Sociai</small></strong>
+          <br>
+          <a href="#"><img src="../img/x.png" alt="X"></a>
+          <a href="#"><img src="../img/tiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="../img/email.png" alt="E-mail"></a>
+          <a href="#"><img src="../img/instagram.png" alt="Instagram"></a>
       </div>
 
     </div>
 
     <hr width="100%" size="5" color="White" />
 
-    <h2 class="final-pagina"> &copy; 2024</h2>
+    <h2 class="final-pagina">&copy; 2024 Aldors</h2>
 
   </footer>
 

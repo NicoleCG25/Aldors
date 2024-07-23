@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: url('../img/backgroundForm.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            /* Fundo semi-transparente para o menu */
+        }
+
+        .menu .logo {
+            width: 200px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: white;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        .divider {
+            width: 100%;
+            border-top: 1px solid white;
+            margin: 20px 0;
+        }
+
+        .form-container {
+            width: 1000px;
+            height: 760px;
+            opacity: 0.70;
+            background: #5F4646;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .form-group {
+            width: 80%;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            opacity: 0.70;
+            background: #9F6B90;
+            border: none;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .form-group select {
+            width: calc(50% - 10px);
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .form-row .form-group {
+            width: 48%;
+        }
+
+        .form-row .form-group select {
+            width: 105%;
+        }
+
+        .submit-btn {
+            padding: 20px 60px;
+            opacity: 0.99;
+            background: #7F3A6B;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <img src="../img/logoo.png" alt="Logo" class="logo">
+        <ul>
+            <ul>
+                <li><a href="index.html" class="active">Inicial</a></li>
+                <li><a href="categoria.html">Categorias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="projetos.html">Projetos Sociais</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </ul>
+    </div>
+    <div class="container">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="title">Cadastrar Eventos</div>
+        <div class="divider"></div>
+        <div class="form-container">
+            <div class="form-group">
+                <label for="nome-evento">Nome do Evento</label>
+                <input type="text" id="nome-evento" placeholder="Nome do Evento">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" placeholder="Estado">
+                </div>
+                <div class="form-group">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Cidade">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Bairro">
+            </div>
+            <div class="form-group">
+                <label for="rua">Rua</label>
+                <input type="text" id="rua" placeholder="Rua">
+            </div>
+            <div class="form-group">
+                <h4>Informações do(a) Administrador(a): </h4>
+
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" placeholder="Telefone">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="area">Área</label>
+                    <select id="area">
+                        <option value="instrumentos">Instrumentos</option>
+                        <option value="danca">Dança</option>
+                        <option value="teatro">Teatro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option value="instrumentos">Instrumentos</option>
+                        <option value="danca">Dança</option>
+                        <option value="teatro">Teatro</option>
+                        <option value="canto">Canto</option>
+                        <option value="teoria">Teoria</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Breve Descrição</label>
+                <textarea id="descricao" maxlength="300" placeholder="Descrição"></textarea>
+            </div><br>
+            <button class="submit-btn">Concluir Cadastro</button>
+        </div>
+    </div>
+</body>
+
+</html>
