@@ -41,8 +41,7 @@
         .main-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            justify-content: center;
+            gap: 12px;
             padding: 20px;
         }
 
@@ -54,7 +53,7 @@
         .quadrado1 {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            width: 320px;
+            width: 360px;
             height: 350px;
             background: url('https://via.placeholder.com/320x350') no-repeat center center/cover;
             display: flex;
@@ -63,7 +62,8 @@
             color: white;
             font-size: 18px;
             text-align: center;
-            margin-left: 40px; /* Ajuste para mover o quadrado 1 mais para a direita */
+            margin-left: 260px; /* Ajuste para mover o quadrado 1 mais para a direita */
+        
         }
 
         .quadrado1 .circle {
@@ -89,7 +89,7 @@
             grid-column: 1 / 2;
             grid-row: 2 / 3;
             width: 320px;
-            height: 150px;
+            height: 165px;
             background: #6F2159;
             color: white;
             padding: 20px;
@@ -98,7 +98,7 @@
             align-items: center;
             text-align: center;
             font-size: 14px;
-            margin-left: 40px; /* Ajuste para mover o quadrado 2 mais para a direita */
+            margin-left: 260px; /* Ajuste para mover o quadrado 2 mais para a direita */
         }
 
         .quadrado2 .inner-square {
@@ -140,15 +140,16 @@
         .quadrado3 {
             grid-column: 2 / 3;
             grid-row: 1 / 3;
-            width: 300px;
-            height: 500px;
-            margin-left: -20px; /* Ajuste para mover o quadrado 3 mais para a esquerda */
+            width: 370px;
+            height: 570px;
+            margin-right: 60px; /* Ajuste para mover o quadrado 3 mais para a esquerda */
             background: url('https://via.placeholder.com/300x500') no-repeat center center/cover;
             display: flex;
+            background-color: #977c8f;
             justify-content: center;
             align-items: center;
             color: white;
-            font-size: 18px;
+            font-size: 60px;
             text-align: center;
         }
 
@@ -162,6 +163,10 @@
             border-radius: 9999px;
         }
 
+        .palavra-quadrado3 {
+            color: #6F2159;
+        }
+
         .quadrado4 {
             grid-column: 3 / 4;
             grid-row: 1 / 2;
@@ -172,8 +177,8 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            margin-left: -40px; /* Ajuste para mover o quadrado 4 mais para a esquerda */
-            margin-top: 20px; /* Ajuste para mover o quadrado 4 mais para baixo */
+            margin-left: -250px; /* Ajuste para mover o quadrado 4 mais para a esquerda */
+            margin-top: 8px; /* Ajuste para mover o quadrado 4 mais para baixo */
         }
 
         .quadrado4 .inner-square {
@@ -204,11 +209,11 @@
             grid-column: 3 / 4;
             grid-row: 2 / 3;
             width: 320px;
-            height: 350px;
+            height: 393px;
             background: url('https://via.placeholder.com/320x350') no-repeat center center/cover;
             border-radius: 30px;
-            margin-top: -180px; /* Ajuste para mover o quadrado 5 mais para cima */
-            margin-left: -40px; /* Ajuste para mover o quadrado 5 mais para a esquerda */
+            margin-top: -188px; /* Ajuste para mover o quadrado 5 mais para cima */
+            margin-left: -250px; /* Ajuste para mover o quadrado 5 mais para a esquerda */
         }
     </style>
 </head>
@@ -234,10 +239,12 @@
             <div class="inner-square"></div>
             <div class="circle"></div>
         </div>
+
         <div class="quadrado quadrado3">
-            ALDORS.
+            <b><p class="palavra-quadrado3">ALDORS.<p></b>
             <div class="circle"></div>
         </div>
+
         <div class="quadrado quadrado4">
             <div class="inner-square">
                 <h2>VENHA FAZER PARTE</h2>
