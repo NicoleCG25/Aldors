@@ -1,24 +1,33 @@
 <?php
 
-    include("conexao.php");
+include("conexao.php");
 
-    $nome = $_POST['nome'];
-    $estado = $_POST['estado'];
-    $cidade = $_POST['cidade'];
-    $bairro = $_POST['bairro'];
-    $dataNasc = $_POST['dataNasc'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+$Nome = $_POST['Nome'];
+$Estado = $_POST['Estado'];
+$Cidade = $_POST['Cidade'];
+$Bairro = $_POST['Bairro'];
+$DataNasc = $_POST['DataNasc'];
+$Email = $_POST['Email'];
+$Senha = $_POST['Senha'];
 
-    $sql = "INSERT INTO usuario (nome, estado, cidade, bairro, data_nasc, email, senha)
-    VALUES ('$nome', '$estado', '$cidade', '$bairro', $dataNasc, '$email', '$senha')";
-
-if ($stmt->execute()) {
-    echo "<h1>Formulário enviado com sucesso!</h1>";
-    
-} else {
-    echo "Erro: " . $sql . "<br>" . $conn->error;
+// Prepara a declaração SQL
+$stmt = $mysqli->prepare("INSERT INTO usuario (Nome, Estado, Cidade, Bairro, DataNasc, Email, Senha) VALUES (?, ?, ?, ?, ?, ?, ?)");
+if ($stmt === false) {
+    die("Erro na preparação: " . $mysqli->error);
 }
 
-$conn->close();
+// Liga os parâmetros
+$stmt->bind_param("sssssss", $Nome, $Estado, $Cidade, $Bairro, $DataNasc, $Email, $Senha);
+
+// Executa a declaração
+if ($stmt->execute()) {
+    echo "<h1>Formulário enviado com sucesso!</h1>";
+} 
+    else {
+        echo "Erro: " . $stmt->error;
+    }
+
+// Fecha a declaração e a conexão
+$stmt->close();
+$mysqli->close();
 ?>

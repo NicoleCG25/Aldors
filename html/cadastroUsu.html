@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url("../img/backgroundCadastroUsu.jpg");/* Troque 'seu-background.jpg' pela sua imagem de fundo */
+            background-image: url("../img/backgroundCadastroUsu.jpg");
             background-size: cover;
             background-position: center;
         }
@@ -18,10 +18,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 2px 20px;
-            background: rgba(0, 0, 0, 0.1); /* Transparência do menu */
+            background: rgba(0, 0, 0, 0.1);
         }
         .menu .logo {
-            width: 200px; /* Ajuste conforme necessário */
+            width: 200px;
         }
         .menu ul {
             list-style: none;
@@ -43,9 +43,9 @@
             height: 100vh;
         }
         .form-box {
-            background: rgba(51, 48, 48, 0.6); /* Cor do quadrado com 60% de transparência */
+            background: rgba(51, 48, 48, 0.6);
             padding: 20px;
-            border-radius: 30px; /* Curvatura do quadrado principal */
+            border-radius: 30px;
             width: 400px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -63,8 +63,8 @@
             padding: 10px;
             margin-bottom: 10px;
             border: none;
-            border-radius: 20px; /* Curvatura dos campos */
-            background: rgba(88, 218, 226, 0.4); /* Cor dos campos com 40% de transparência */
+            border-radius: 20px;
+            background: rgba(88, 218, 226, 0.4);
         }
         .form-box .small-inputs {
             display: flex;
@@ -77,16 +77,21 @@
             width: 100%;
             padding: 10px;
             border: none;
-            border-radius: 40px; /* Curvatura do botão */
-            background: #58DAE2; /* Cor do botão */
+            border-radius: 40px;
+            background: #58DAE2;
             color: white;
             font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .form-box button:hover {
+            background: #4fc2d0;
         }
     </style>
 </head>
 <body>
     <div class="menu">
-        <img src="../img/logoo.png" alt="Logo" class="logo"> <!-- Troque 'sua-logo.png' pela sua logo -->
+        <img src="../img/logoo.png" alt="Logo" class="logo">
         <ul>
             <li><a href="index.html" class="active">Inicial</a></li>
             <li><a href="categoria.html">Categorias</a></li>
@@ -98,20 +103,22 @@
     <div class="form-container">
         <div class="form-box">
             <h2>Cadastro Usuário</h2>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            <div class="small-inputs">
-                <input type="text" id="estado" name="estado" placeholder="Estado">
-                <input type="text" id="cidade" name="cidade" placeholder="Cidade">
-                <input type="text" id="bairro" name="bairro" placeholder="Bairro">
-            </div>
-            <label for="data-nascimento">Data de Nascimento:</label>
-            <input type="date" id="data-nascimento" name="data-nascimento">
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
-            <button type="submit">Concluir</button>
+            <form action="../php/formularioUsuario.php" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="Nome" name="Nome">
+                <label for="email">Email:</label>
+                <input type="email" id="Email" name="Email">
+                <div class="small-inputs">
+                    <input type="text" id="Estado" name="Estado" placeholder="Estado">
+                    <input type="text" id="Cidade" name="Cidade" placeholder="Cidade">
+                    <input type="text" id="Bairro" name="Bairro" placeholder="Bairro">
+                </div>
+                <label for="data-nascimento">Data de Nascimento:</label>
+                <input type="date" id="DataNasc" name="DataNasc">
+                <label for="senha">Senha:</label>
+                <input type="password" id="Senha" name="Senha">
+                <button type="submit">Concluir</button>
+            </form>
         </div>
     </div>
 </body>
