@@ -3,38 +3,57 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Aldors - Plataforma de projetos sociais, eventos e categorias.">
-  <title>Aldors</title>
-  <link rel="shortcut icon" href="../img/logoo.png" type="image/x-icon">
-  <link rel="stylesheet" href="../css/styles.css">
+  
+  <title>Aldors</title> <!--TITULO DO SITE-->
+  
+  <link rel="shortcut icon" href="../img/logoo.png" type="image/x-icon"> <!--COLOCANDO A LOGO-->
+
+  <!--------------------------------LINK DA FONTE DAS PALAVRAS------------------------------------>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://getbootstrap.com/docs/5.3/assets/css/docs.css">
+  
+  <!--------------------------------LINKS DO BOOTSTRAP-------------------------------------------->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-  <style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <!--ARQUIVO CSS PARA ESTILIZAR O SISTEMA-->
+ <style>
+
+    /* Estilos Globais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Configuração Padrão do Sistema Web */
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-image: url('../img/backgroundIndex.jpeg');
       background-size: cover;
       background-attachment: fixed;
       background-position: center;
     }
 
+    /* Classe de estilização do cabeçalho */
     .menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
+      background-color: black;
     }
-
+    /* Definindo o tamanho da logo no cabeçalho */
     .menu .logo {
       width: 200px;
     }
 
+    /* Classe para estilizar o botoẽs para aceesar outras paginas */
     .menu ul {
       list-style: none;
       display: flex;
@@ -42,128 +61,18 @@
       padding: 0;
     }
 
+    /* Ajustando os botoẽs do cabeçalho */
     .menu ul li {
       margin: 0 15px;
     }
 
+    /* Classe também utilizada para estilizar o botoẽs */
     .menu ul li a {
       color: rgb(255, 255, 255);
       text-decoration: none;
     }
 
-    .header {
-      text-align: center;
-      color: white;
-      margin-top: 20px;
-    }
-
-    .header h1 {
-      margin: 0;
-    }
-
-    .header hr {
-      width: 100%;
-      margin: 10px auto;
-      border: 0;
-      border-top: 2px solid white;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 310px);
-      gap: 20px;
-      justify-content: center;
-      padding: 20px;
-      margin: 0 auto;
-      max-width: 1300px;
-    }
-
-    .grid-item {
-      background: rgba(42, 39, 39, 0.7);
-      width: 322px;
-      height: 161px;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .grid-item h2 {
-      color: white;
-      margin: 0;
-    }
-
-    .grid-item button {
-      margin-top: 10px;
-      padding: 10px;
-      border: none;
-      border-radius: 20px;
-      background: rgba(111, 33, 89, 0.6);
-      color: white;
-      cursor: pointer;
-    }
-
-    .grid-item button:hover {
-      background: rgba(111, 33, 89, 0.8);
-    }
-
-    .container {
-      display: flex;
-      width: 80%;
-      margin: 50px auto;
-      background: #333;
-      color: white;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .left-section,
-    .right-section {
-      padding: 20px;
-    }
-
-    .left-section {
-      width: 60%;
-    }
-
-    .right-section {
-      width: 40%;
-      background: #444;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .feature {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    .number {
-      background: #d291bc;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-    }
-
-    .text {
-      font-size: 16px;
-    }
-
+    /* Configuração Padrão do Rodapé*/
     .rodape {
       background-color: #010101;
       color: white;
@@ -172,29 +81,37 @@
       margin-top: 50px;
     }
 
+    /* Estilizando os itens dentro do rodapé*/
     .body-rodape {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      color:#fff
     }
 
+    /* Primeira parte do rodape com a logo */
     .container-rodape-1 {
       width: 50%;
+      margin-left: 5%;
     }
 
+    /* Segunda parte do rodape com informações dos criadores */
     .container-rodape-2 {
       width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-left: 17%
     }
 
+    /* Definindo um tamanho padrão para as palavras*/
     .apresentacao-rodape,
     .escrita-rodape,
     .container-rodape-2 small {
       font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
     }
 
+    /* Estilizando os icones das outras redes socias do Projeto*/
     .redes-sociais {
       display: flex;
       justify-content: center;
@@ -202,20 +119,363 @@
       margin-top: 10px;
     }
 
+    /* Ajustando os icones do rodape*/
     .redes-sociais a {
       margin: 0 5px;
     }
 
+    /* Ajustando o tamanho dos icones */
     .redes-sociais img {
       width: 30px; /* Ajuste o tamanho das imagens das redes sociais conforme necessário */
     }
 
+    /* Classe para mudar a cor da linha no rodape*/
     hr {
       border-color: white;
     }
 
+    /* Estilizando o ano e nome do projeto no final da pagina*/
     .final-pagina {
       margin-top: 10px;
+    }
+
+    /* Ajustando a posição e cor do texto dentro da 1º sessão*/
+    .pagina-inicial-texto {
+      margin-left: 4%;
+      color: white;
+    }
+
+    /**/
+    .logo img {
+      height: 90px;
+      width: auto;
+    }
+  
+    /* Ajustando a posição da logo no rodape*/
+    .logo-rodape {
+      margin-top: 2%;
+    }
+
+    /* Estilizando a escrita no final da pagina*/
+    .final-pagina {
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Ajustando as imagens na 2º sessão do paralax*/
+    .container-criador {
+      gap: 100px;
+      display: flex;
+      margin-left: 3%;
+    }
+
+    /* Definindo uma cor de fundo entre as sessões*/
+    .fundo-home {
+      background-color: #000;
+    }
+
+    /* Estilizando os botoẽs de Navegação*/
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Complemento da classe anterior*/
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Definindo uma cor para os botoẽs*/
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
+    nav ul li a.active {
+      color: #6F2159;
+    }
+
+    /* Classe usada para criar o quadro 1*/
+    .encontrar-professor1 {
+      position: absolute;
+      background-color: #2A2727;
+      width: 600px;
+      height: 550px;
+      color: white;
+    }
+
+    /* Classe usada para criar o quadro 2*/
+    .encontrar-professor2 {
+      position: absolute;
+      background-color: #101010;
+      margin-left: 44.5%;
+      color: white;
+      width: 747px;
+      height: 550px;
+    }
+
+    /* Estilizando o texto 1 dentro do quadro 2*/
+    .encontrar-professor2-texto {
+      margin-left: 10%;
+      margin-top: 13%;
+      font-size: 25px;
+    }
+
+    /* Estilizando o texto 2 dentro do quadro 2*/
+    .encontrar-professor2-texto2 {
+      margin-left: 10%;
+      margin-top: 5%;
+      font-size: 25px;
+    }
+
+    /* Estilizando o texto 3 dentro do quadro 2*/
+    .encontrar-professor2-texto3 {
+      margin-left: 10%;
+      margin-top: 9%;
+      font-size: 25px;
+    }    
+
+    /* Ajustando o titulo do quadro 1*/
+    .titulo-2{
+      font-size: 50px;
+      margin-left: 10%;
+      margin-top: 2%;
+    }
+
+    /* Ajustando o texto dentro do quadrado 1*/
+    .paragrafo2 {
+      font-size: 23px;
+      margin-left: 10%;
+    }
+
+    /* Classe usada para dar um espaço entre o rodape e a ultima sessão*/
+    .fundo-home1 {
+      margin-top: 46%;
+    }
+
+    /* Classe usada para complementar a anterior*/
+    .espaco {
+      margin-bottom: 60%;
+    }
+
+    /* Criando o 1º topico*/
+    .circulo2-1{
+      border-radius: 10%;
+      position: absolute;
+      margin-left: 42%;
+      margin-top: 6%;
+      background-color: #8F527E;
+      font-size: 40px;
+      width: 80px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Criando o 1º topico*/
+    .circulo2-2{
+      border-radius: 10%;
+      position: absolute;
+      margin-left: 42%;
+      margin-top: 15%;
+      background-color: #8F527E;
+      font-size: 40px;
+      width: 80px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Criando o 1º topico*/
+    .circulo2-3{
+      border-radius: 10%;
+      position: absolute;
+      margin-left: 42%;
+      margin-top: 25%;
+      background-color: #8F527E;
+      font-size: 40px;
+      width: 80px;
+      text-align: center;
+      color: white;
+    }
+
+    /**/
+    .cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      margin-right: 7%;
+    }
+
+    /* Ajusntando a posição dos circulos com porcentagem*/
+    .circulo {
+      margin-top: 10%;
+      margin-left: 6%;
+      margin-bottom: 10%;
+    }
+
+    /* Estilizando o 1º circulo com porcentagem*/
+    .circulo-1 {
+      background: rgba(0, 0, 0, 0.800);
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      position: absolute;
+    }
+
+    /* Ajustando as porcentagens dentro dos circulos*/
+    .circulo-texto {
+      margin-top: 17%;
+      margin-left: 45%;
+      font-size: 35px;
+      color: white;
+    }
+
+    /* Estilizando o 2º circulo com porcentagem*/
+    .circulo-2 {
+      border-radius: 50%;
+      background-color: #38373380;
+      width: 350px;
+      height: 350px;
+      position: absolute;
+      margin-left: 20%;
+
+    }
+
+    /* Estilizando o 3º circulo com porcentagem*/
+    .circulo-3 {
+      background-color: #1E191980;
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      position: absolute;
+      margin-left: 40%;
+
+    }
+
+    /* Estilizando o 4º circulo com porcentagem*/
+    .circulo-4 {
+      background-color: #322C2E80;
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      position: absolute;
+      margin-left: 60%;
+    }
+
+    /* */
+    .container-home {
+      display: flex;
+      gap: 10px;
+      color: white;
+      background-color: #101010;
+      padding: 20px;
+      width: 100%;
+    }
+
+    /**/
+    .texto-home-1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 25px;
+      margin-top: 3%;
+      margin-right: 3%;
+    }
+
+    /**/
+    .texto-home-2 {
+      font-size: 23px;
+      margin-top: 9%;
+      margin-right: 15%;
+      margin-left: 7%;
+    }
+
+    /**/
+    .imagem-home {
+      margin: 0px 10px;
+    }
+
+    /* Links que atuam como contêineres */
+    a.box {
+      background-color: #383733;
+      width: 300px;
+      height: 300px;
+      margin: 0px 0px 0px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 40px;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    /* Mudando a cor dos cards para outras paginas*/
+    a.box:hover {
+      background-color: #8A2C6C;
+    }
+
+    /*---------------CLASSES DO EFEITO PARALLAX------------------------------*/
+
+
+    /*Definindo o tamanho do parallax*/
+    .efeito-parallax-criador {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /*Estilizando o parallax*/
+    .criador {
+      display: block;
+    }
+
+    /*Utilizado para que o ultimo paragrafo não fique com a mesma margem dos outros*/
+    section.module:last-child {
+      margin-bottom: 0;
+    }
+
+    /*Movendo os conteudos dentro do parallax*/
+    section.module.content {
+    padding: 40px 0;
+    }
+
+    /**/
+    section.module.parallax {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 20vh !important;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    }
+
+    /**/
+    section.module.parallax:after {
+      content: "";
+      height: 100%;
+      width: 80%;
+      position: absolute;
+      z-index: 8;
+      background: -moz-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+      background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0) 0, rgba(0,0,0,0) 40%, #000 100% );
+    }
+
+    /*Colocando a imagem fixa no fundo*/
+    section.module.parallax-1 {
+      background-image: url("../img/070ac008728f5ba724c34395a87bafb3.jpg");
     }
     
   </style>
@@ -223,165 +483,204 @@
 
 <body>
 
+  <!--Inicio do menu (cabeçalho)-->
   <div class="menu">
     <div class="logo">
       <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
     </div>
+
+    <!--Navegação entre as pagínas do site-->
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html" class="active">Inicial</a></li>
         <li><a href="categoria.html">Categorias</a></li>
         <li><a href="eventos.html">Eventos</a></li>
-        <li><a href="projetos.html">Projetos Sociais</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="projetosSociais.html">Projetos Sociais</a></li>
+        <li><a href="cadastroUsu.html">Perfil</a></li>
       </ul>
     </nav>
+    <!--Fim do cabeçalho-->
   </div>
 
-  <div class="container-slider">
-    <div class="container-images">
-      <button id="prev-button" aria-label="Previous Slide"><img src="../img/arrow.png" alt="Previous"></button>
-      <img src="../img/FrkM9h5WYAEqck2.jpg" alt="girl" class="slider on">
-      <img src="../img/FrkMPkrWcAELcXm.jpg" alt="girl" class="slider">
-      <img src="../img/F5W3sgYaYAEbdzd.jpg" alt="girl" class="slider">
-      <button id="next-button" aria-label="Next Slide"><img src="../img/arrow.png" alt="Next"></button>
-    </div>
+  <div>
+      <img class="img-fluid" src="../img/inicial.jpeg" width="100%" height="250">
   </div>
 
-
+<!-------------------------EFEITO PARALAX---------------------------------->
   <div class="efeito-parallax-criador">
     <main class="criador">
 
       <section class="module parallax parallax-1">
-
       </section>
+
+<!-------------------------CRIANDO A 1º SESSÃO------------------------->
       <div class="fundo-home">
         <section class="module content">
+          <pre class="pagina-inicial-texto"><b>"onde as palavras falham,
+          a música fala.<b>
+          </pre>
 
           <div class="container-criador">
-            <img src="../img/bailarina.jpg" height="250" width="200">
-            <img src="../img/bailarina.jpg" height="250" width="200">
-            <img src="../img/bailarina.jpg" height="250" width="200">
-
+            <img src="../img/bailarina.jpg" height="400" width="350">
+            <img src="../img/bailarina.jpg" height="400" width="350">
+            <img src="../img/bailarina.jpg" height="400" width="350">
           </div>
         </section>
       </div>
+<!--------------------------FIM DA 1º SESSÃO--------------------------->
+
       <section class="module parallax parallax-1">
-
-        <!----------Primeiro Parallax---------------------------------------------->
-
-        <br>
-
-        <div class="container">
-          <a href="projetos.html" class="box">Projetos Sociais</a>
-          <a href="explorar.html" class="box">Explorar</a>
-          <a href="eventos.html" class="box">Eventos</a>
-        </div>
-
-        <div class="container-home">
-          <h2>Curiosidades</h2>
-          <img class="imagem-home" src="../img/Naomi.jpg" height="300" width="400" alt="Curiosidade Image">
-        </div>
-
       </section>
 
-      <!----------Fim do Primeiro Parallax--------------------------------------->
-
-      <section class="module content">
-
-        <div class="container-criador">
-
-          <!----------Texto sobre o Blog--------------------------------------------->
-
-      </section>
-
-      <!----------Segundo Parallax----------------------------------------------->
-
-      <section class="module parallax parallax-2">
-        <div class="retangulo-roxo">
-          <div class="text-container">
-            <h1 class="text-bemvind">Bem Vind</h1>
-            <br> <br> <br>
-            <h1 class="text-ao">ao</h1>
-          </div>
-          <div class="retangulo">
-            <h1 class="text-o">o</h1>
-            <br> <br> <br>
-            <h1 class="text-aldors">Aldors</h1>
-          </div>
-          <div class="retangulo segundo-retangulo"></div>
-        </div>
-
-
-        <div class="container-home">
-          <h2>Curiosidades</h2>
-          <img class="imagem-home" src="../img/Naomi.jpg" height="300" width="400" alt="Curiosidade Image">
-        </div>
-      </section>
-
-      <!----------Fim do Segundo Parallax---------------------------------------->
-      <div class="container">
-        <div class="left-section">
-          <h1>Encontre professores no país inteiro</h1>
-          <p>O sistema Aldors é a sua plataforma definitiva para encontrar professores de várias áreas artísticas em
-            todo o país. Se você está em busca de aprimorar suas habilidades em música, dança, artes plásticas, teatro
-            ou qualquer outra forma de expressão artística, aqui é o lugar certo para você.</p>
-        </div>
-        <div class="right-section">
-          <div class="feature">
-            <div class="number">1</div>
-            <div class="text">Permite a conexão entre professores e alunos</div>
-          </div>
-          <div class="feature">
-            <div class="number">2</div>
-            <div class="text">Divulga eventos e projetos sociais</div>
-          </div>
-          <div class="feature">
-            <div class="number">3</div>
-            <div class="text">Oferece curiosidades e quizzes</div>
-          </div>
-        </div>
+<!-------------------------CRIANDO A 2º SESSÃO------------------------->
+      <div class="cards">
+        <a href="projetos.html" class="box">Explorar</a>
+        <a href="explorar.html" class="box">Projetos <br>Sociais</a>
+        <a href="eventos.html" class="box">Eventos </a>
       </div>
+<!--------------------------FIM DA 2º SESSÃO--------------------------->
+
+      <section class="module parallax parallax-1">
+      </section>
+
+<!-------------------------CRIANDO A 3º SESSÃO------------------------->
+      <div class="container-home">
+        <img class="imagem-home" src="../img/Naomi.jpg" height="300" width="400" alt="Curiosidade Image">
+        
+        <p class="texto-home-1">"A música é uma forma de arte que nos permite <br>
+        explorar as profundezas de nossa criatividade,<br> 
+        descobrir novos mundos sonoros e expressar<br>
+        nossas emoções mais íntimas de maneira única e<br>
+        poderosa."
+        </p>
+      </div>
+<!--------------------------FIM DA 3º SESSÃO--------------------------->
+
+      <section class="module parallax parallax-1">
+      </section>
+
+<!-------------------------CRIANDO A 4º SESSÃO------------------------->
+      <div class="container-home">
+        <img class="imagem-home" src="../img/foto.webp" height="700" width="450" alt="Curiosidade Image">
+      
+        <p class="texto-home-2">"A música tem o poder de transformar o <br>
+          comum em extraordinário. Uma melodia <br>
+          pode nos transportar para tempos e lugares <br>
+          distantes, fazendo-nos reviver memórias e <br>
+          emoções que pensávamos estar esquecidas. <br>
+          Em cada nota, encontramos uma história, <br>
+          uma emoção, uma parte de nós mesmos. A <br>
+          música é a linguagem universal que fala <br>
+          diretamente ao coração, unindo pessoas de <br>
+          diferentes culturas e gerações em um laço <br>
+          invisível de harmonia e compreensão."
+        </p>
+      </div>
+<!--------------------------FIM DA 4º SESSÃO--------------------------->
+
+      <div class="circulo">
+        <div class="circulo-1"><p class="circulo-texto">50%</p></div>
+        <div class="circulo-2"><p class="circulo-texto">40%</p></div>
+        <div class="circulo-3"><p class="circulo-texto">30%</p></div>
+        <div class="circulo-4"><p class="circulo-texto">20%</p></div>
+      </div>
+
+      <div class="fundo-home1">
+
+      </div>
+
+<!-------------------------CRIANDO A 5º SESSÃO------------------------->
+      <div class="encontrar-professor1">
+        <h1 class="titulo-2">Encontre professores <br>
+          no país inteiro
+        </h1>
+
+        <p class="paragrafo2">O sistema Aldors é a sua <br>
+          plataforma definitiva para <br>
+          encontrar professores de várias <br>
+          áreas artísticas em todo o país. <br>
+          Se você está em busca de <br>
+          aprimorar suas habilidades em <br>
+          música, dança, artes plásticas, <br>
+          teatro ou qualquer outra forma <br>
+          de expressão artística, aqui é o <br>
+          lugar certo para você.
+        </p>
+      </div>
+
+      <div class="encontrar-professor2">                  
+        <div class="encontrar-professor2-texto">Permite a conexão entre <br>
+          professores e alunos
+        </div>
+
+        <div class="encontrar-professor2-texto2">Divulga eventos e <br>
+          projetos sociais
+        </div>
+
+        <div class="encontrar-professor2-texto3">Oferece curiosidades e <br>
+          quizzes
+        </div>
+
+      </div>
+
+      <div class="circulo2-1">1</div>
+
+      <div class="circulo2-2">2</div>
+
+      <div class="circulo2-3">3</div>
+<!--------------------------FIM DA 5º SESSÃO--------------------------->
+
+      <div class="fundo-home1"> 
+      </div>
+
+      <p class="espaco">  .</p>
     </main>
 
-    <!----------Fim das apresentações----------------------------------------->
-    </section>
+<!----------------------------Fim Do efeito PARALAX----------------------------------------->
   </div>
 
+<!----------------------------INICIO DO RODAPE----------------------------------------->
   <footer class="rodape">
 
     <div class="body-rodape">
 
+      <!--1º Divisão do rodape-->
       <div class="container-rodape-1">
         <img class="logo-rodape" src="../img/logo.jpg" height="60" width="150">
         <br>
         <p class="escrita-rodape"><strong>Aldors - Sistema de Valorização da Arte e Cultura</strong></p>
       </div>
 
+      <!--2º Divisão do rodape-->
       <div class="container-rodape-2">
         <br>
         <strong class="apresentacao-rodape"><small>Sobre nós</small></strong>
         <br>
         <strong class=""><small>Somos alunos do CEFET-MG...</small></strong>
       </div>
-        <div class="redes-sociais">
-          <strong><small>Redes Sociai</small></strong>
-          <br>
-          <a href="#"><img src="../img/x.png" alt="X"></a>
-          <a href="#"><img src="../img/tiktok.png" alt="TikTok"></a>
-          <a href="#"><img src="../img/email.png" alt="E-mail"></a>
-          <a href="#"><img src="../img/instagram.png" alt="Instagram"></a>
+
+      <!--3º Divisão do rodape-->
+      <div class="redes-sociais">
+        <strong><small>Redes Sociai</small></strong>
+        <br>
+        <a href="#"><img src="../img/x.png" alt="X"></a>
+        <a href="#"><img src="../img/tiktok.png" alt="TikTok"></a>
+        <a href="#"><img src="../img/email.png" alt="E-mail"></a>
+        <a href="#"><img src="../img/instagram.png" alt="Instagram"></a>
       </div>
 
     </div>
 
+<!----------------------------PARTE FINAL DO RODAPE---------------------------->
     <hr width="100%" size="5" color="White" />
 
     <h2 class="final-pagina">&copy; 2024 Aldors</h2>
 
-  </footer>
+  </footer> <!--Fim do rodapé-->
 
-  <script src="../js/index.js"></script>
+  <script src="../js/index.js"></script> <!--Link para utilizar o JavaScript-->
+
+  <!--FIM DO SISTEMA-->
 </body>
 
 </html>
