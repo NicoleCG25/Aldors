@@ -10,7 +10,7 @@ $categoria = $_POST['categoria'];
 $bairro = $_POST['bairro'];
 $descricao = $_POST['descricao'];
 
-$sql = "INSERT INTO evento (nomeEvento, estado, cidade, nomeAdmin, areaEnsino, categoria, bairro, descricao) 
+$sql = "INSERT INTO Evento (NomeEvento, Estado, Cidade, NomeAdministrador, AreaArtistica, Categoria, Bairro, Descricao) 
 VALUES ('$nomeEvento', '$estado', '$cidade', '$nomeAdmin', '$areaEnsino', '$categoria', '$bairro', '$descricao')";
 
 if ($conn->query($sql) === TRUE) {

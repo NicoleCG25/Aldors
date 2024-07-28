@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aldors - Plataforma de projetos sociais, eventos e categorias.">
+
+    <title>Eventos</title> <!--TITULO DO SITE-->
+
+    <link rel="shortcut icon" href="../img/logoo.png" type="image/x-icon"> <!--COLOCANDO A LOGO-->
+
+    <!-- LINK DA FONTE DAS PALAVRAS -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!-- LINKS DO BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ARQUIVO CSS PARA ESTILIZAR O SISTEMA -->
+    <style>
+        /* Estilos Globais */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+
+        /* Estilo da imagem */
+        .background-image {
+            width: 100%;
+            height: auto;
+            /* Mantém a proporção da imagem */
+            display: block;
+            /* Remove o espaço abaixo da imagem */
+        }
+
+        /* Configuração do Cabeçalho */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Fundo escuro com transparência para o cabeçalho */
+            position: fixed;
+            /* Fixa o cabeçalho no topo da página */
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            /* Garante que o cabeçalho fique acima do conteúdo */
+        }
+
+        /* Definindo o tamanho da logo no cabeçalho */
+        .menu .logo {
+            width: 200px;
+        }
+
+        .menu .logo img {
+            width: 100%;
+            /* Ajusta a largura da imagem para preencher o espaço da logo */
+            height: auto;
+            /* Mantém a proporção da imagem */
+        }
+
+        /* Classe para estilizar os botões de navegação no cabeçalho */
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ajustando os botões do cabeçalho */
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        /* Estilizando os links de navegação */
+        .menu ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Ajustando o botão ativo do cabeçalho */
+        .menu ul li a.active {
+            color: #6F2159;
+        }
+
+        /* Estilo da faixa de título */
+        .title-container {
+            background-color: #7F3A6B;
+            /* Cor da faixa */
+            padding: 20px;
+            /* Espaçamento interno */
+            text-align: center;
+            /* Centraliza o texto */
+            color: black;
+            /* Cor do texto */
+            margin-top: 70px;
+            /* Margem superior para o título ficar abaixo da imagem */
+            position: relative;
+            /* Necessário para garantir a camada correta */
+            z-index: 500;
+            /* Garantir que o título fique acima de outros elementos, se necessário */
+        }
+
+        .title-container h1 {
+            margin: 0;
+            /* Remove a margem padrão */
+            font-size: 36px;
+            /* Tamanho da fonte do título */
+        }
+
+        /* Estilo do conteúdo principal */
+        .main-content {
+            padding: 20px;
+            /* Adiciona espaçamento ao conteúdo principal */
+        }
+
+        /* Estilo dos containers */
+        .container-row {
+            display: flex;
+            /* Alinha os containers em linha */
+            justify-content: space-around;
+            /* Espaça os containers igualmente */
+            flex-wrap: wrap;
+            /* Permite que os containers quebrem linha se necessário */
+            margin-top: 20px;
+            /* Espaço acima dos containers */
+        }
+
+        .container-item {
+            background-color: #9F6B90;
+            /* Cor de fundo dos containers */
+            width: 19%;
+            /* Largura dos containers */
+            padding: 15px;
+            /* Espaçamento interno dos containers */
+            text-align: center;
+            /* Centraliza o texto dentro dos containers */
+            color: white;
+            /* Cor do texto dentro dos containers */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Sombra ao redor dos containers */
+            border-radius: 15px;
+            /* Borda arredondada dos containers */
+            margin-bottom: 20px;
+            /* Espaço abaixo dos containers */
+            height: auto;
+            /* Altura automática para se ajustar ao conteúdo */
+            display: flex;
+            flex-direction: column;
+            /* Alinha os itens em coluna */
+            justify-content: space-between;
+            /* Espaça os itens igualmente dentro do container */
+            overflow: hidden;
+            /* Garante que o conteúdo não ultrapasse as bordas */
+        }
+
+        .container-item img {
+            width: 100%;
+            /* Largura da imagem dentro do container */
+            height: 150px;
+            /* Altura fixa da imagem */
+            object-fit: cover;
+            /* Cobre o container sem distorcer a imagem */
+            border-radius: 10px;
+            /* Borda arredondada da imagem */
+        }
+
+        .container-item .text-field {
+            font-size: 16px;
+            /* Tamanho da fonte */
+            color: black;
+            /* Cor do texto */
+            border-bottom: 2px solid black;
+            /* Linha preta embaixo do texto */
+            display: block;
+            /* Exibe o texto em bloco */
+            padding-bottom: 5px;
+            /* Espaçamento entre o texto e a linha */
+            margin-bottom: 10px;
+            /* Espaço abaixo de cada campo */
+        }
+
+        .container-item .text-group {
+            display: flex;
+            /* Alinha os campos lado a lado */
+            justify-content: space-between;
+            /* Espaça os campos igualmente */
+            margin-bottom: 10px;
+            /* Espaço abaixo do grupo de campos */
+        }
+
+        .container-item .text-group .text-field {
+            flex: 1;
+            /* Faz com que os campos ocupem o mesmo espaço */
+            margin-right: 10px;
+            /* Espaço à direita dos campos, exceto o último */
+        }
+
+        .container-item .text-group .text-field:last-child {
+            margin-right: 0;
+            /* Remove o espaço à direita do último campo */
+        }
+
+        /* Estilo do botão */
+        .btn-visualizar {
+            display: inline-block;
+            /* Faz o botão se comportar como um bloco inline */
+            background-color: #7F3A6B;
+            /* Cor de fundo do botão */
+            color: white;
+            /* Cor do texto do botão */
+            padding: 10px 20px;
+            /* Espaçamento interno do botão */
+            border: none;
+            /* Remove a borda padrão do botão */
+            border-radius: 5px;
+            /* Borda arredondada do botão */
+            font-size: 16px;
+            /* Tamanho da fonte do botão */
+            text-align: center;
+            /* Centraliza o texto do botão */
+            text-decoration: none;
+            /* Remove o sublinhado do texto */
+            cursor: pointer;
+            /* Mostra o cursor como uma mão ao passar sobre o botão */
+            margin-top: 10px;
+            /* Espaço acima do botão */
+        }
+
+        .btn-visualizar:hover {
+            background-color: #6F2159;
+            /* Cor de fundo do botão ao passar o mouse */
+        }
+
+        .rodape {
+            background-color: #010101;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* Estilizando os itens dentro do rodapé*/
+        .body-rodape {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff
+        }
+
+        /* Primeira parte do rodape com a logo */
+        .container-rodape-1 {
+            width: 50%;
+            margin-left: 5%;
+        }
+
+        /* Segunda parte do rodape com informações dos criadores */
+        .container-rodape-2 {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 17%
+        }
+
+        /* Definindo um tamanho padrão para as palavras*/
+        .apresentacao-rodape,
+        .escrita-rodape,
+        .container-rodape-2 small {
+            font-size: 14px;
+            /* Ajuste o tamanho da fonte conforme necessário */
+        }
+
+        /* Estilizando os icones das outras redes socias do Projeto*/
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        /* Ajustando os icones do rodape*/
+        .redes-sociais a {
+            margin: 0 5px;
+        }
+
+        /* Ajustando o tamanho dos icones */
+        .redes-sociais img {
+            width: 30px;
+            /* Ajuste o tamanho das imagens das redes sociais conforme necessário */
+        }
+
+        /* Classe para mudar a cor da linha no rodape*/
+        hr {
+            border-color: white;
+        }
+
+        /* Estilizando o ano e nome do projeto no final da pagina*/
+        .final-pagina {
+            margin-top: 10px;
+        }
+
+        /* Ajustando a posição e cor do texto dentro da 1º sessão*/
+        .pagina-inicial-texto {
+            margin-left: 4%;
+            color: white;
+        }
+
+        /**/
+        .logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        /* Ajustando a posição da logo no rodape*/
+        .logo-rodape {
+            margin-top: 2%;
+        }
+
+        /* Estilizando a escrita no final da pagina*/
+        .final-pagina {
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Imagem de disco -->
+    <img src="../img/disco.jpg" class="background-image" alt="Imagem de Disco">
+
+    <!-- Início do menu (cabeçalho) -->
+    <div class="menu">
+        <div class="logo">
+            <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
+        </div>
+
+        <!-- Navegação entre as páginas do site -->
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="index.html" class="active">Inicial</a></li>
+                <li><a href="categoria.html">Categorias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="projetosSociais.html">Projetos Sociais</a></li>
+                <li><a href="cadastros.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <!-- Fim do cabeçalho -->
+    </div>
+
+    <!-- Faixa de Título -->
+    <div class="title-container">
+        <h1>Eventos de Dança</h1>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faixa de Título -->
+    <div class="title-container">
+        <h1>Eventos de Música</h1>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faixa de Título -->
+    <div class="title-container">
+        <h1>Eventos de Teatro</h1>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="container-row">
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 1">
+                <span class="text-field">Nome do Evento 1</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 2">
+                <span class="text-field">Nome do Evento 2</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 3">
+                <span class="text-field">Nome do Evento 3</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 4">
+                <span class="text-field">Nome do Evento 4</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+            <div class="container-item">
+                <img src="https://via.placeholder.com/150" alt="Imagem 5">
+                <span class="text-field">Nome do Evento 5</span>
+                <div class="text-group">
+                    <span class="text-field">Evento</span>
+                    <span class="text-field">Cidade</span>
+                </div>
+                <div class="text-group">
+                    <span class="text-field">Bairro</span>
+                    <span class="text-field">Número</span>
+                </div>
+                <span class="text-field">Rua</span>
+                <span class="text-field">Nome Administrador(a) do evento</span>
+                <a href="#" class="btn-visualizar">Visualizar</a>
+            </div>
+        </div>
+    </div>
+
+    <!----------------------------INICIO DO RODAPE----------------------------------------->
+    <footer class="rodape">
+
+        <div class="body-rodape">
+
+            <!--1º Divisão do rodape-->
+            <div class="container-rodape-1">
+                <img class="logo-rodape" src="../img/logo.jpg" height="60" width="150">
+                <br>
+                <p class="escrita-rodape"><strong>Aldors - Sistema de Valorização da Arte e Cultura</strong></p>
+            </div>
+
+            <!--2º Divisão do rodape-->
+            <div class="container-rodape-2">
+                <br>
+                <strong class="apresentacao-rodape"><small>Sobre nós</small></strong>
+                <br>
+                <strong class=""><small>Somos alunos do CEFET-MG...</small></strong>
+            </div>
+
+            <!--3º Divisão do rodape-->
+            <div class="redes-sociais">
+                <strong><small>Redes Sociais</small></strong>
+                <br>
+                <a href="#"><img src="../img/x.png" alt="X"></a>
+                <a href="#"><img src="../img/tiktok.png" alt="TikTok"></a>
+                <a href="#"><img src="../img/email.png" alt="E-mail"></a>
+                <a href="#"><img src="../img/instagram.png" alt="Instagram"></a>
+            </div>
+
+        </div>
+
+        <!----------------------------PARTE FINAL DO RODAPE---------------------------->
+        <hr width="100%" size="5" color="White" />
+
+        <h2 class="final-pagina">&copy; 2024 Aldors</h2>
+
+    </footer> <!--Fim do rodapé-->
+
+    <script src="../js/index.js"></script> <!--Link para utilizar o JavaScript-->
+
+    <!--FIM DO SISTEMA-->
+
+</body>
+
+</html>

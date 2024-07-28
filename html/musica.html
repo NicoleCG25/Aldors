@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -222,3 +223,229 @@
     </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musica e Instrumentos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('../img/fundoCategoria.jpg'); /* Certifique-se de que o caminho está correto */
+            background-size: cover;
+            background-attachment: fixed; /* Fundo estático */
+            background-position: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            
+        }
+        .menu .logo {
+            width: 200px; /* Ajuste conforme necessário */
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .menu ul li {
+            margin: 0 15px;
+        }
+        .menu ul li a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        .header {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header hr {
+            width: 100%;
+            margin: 10px auto;
+            border: 0;
+            border-top: 2px solid white;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 310px); /* Largura dos quadrados */
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            margin: 0 auto; /* Centraliza o grid-container */
+            max-width: 1300px; 
+        }
+        .grid-item {
+            background: rgba(42, 39, 39, 0.7); /* Cor dos quadrados com 70% de transparência */
+            width: 322px;
+            height: 161px;
+            border-radius: 20px; /* Curvatura dos quadrados */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .grid-item h2 {
+            color: white;
+            margin: 0;
+        }
+        .grid-item button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px; /* Curvatura do botão */
+            background: rgba(111, 33, 89, 0.6); /* Cor do botão com 60% de transparência */
+            color: white;
+            cursor: pointer;
+        }
+        .grid-item button:hover {
+            background: rgba(111, 33, 89, 0.8); /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <img src="../img/logoo.png" alt="Logo" class="logo"> <!-- Troque 'sua-logo.png' pela sua logo -->
+        <ul>
+            <li><a href="index.html">Inicial</a></li>
+            <li><a href="categoria.html">Categorias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="projetos.html">Projetos Sociais</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <h1>Musica e Instrumentos</h1>
+        <hr>
+    </div>
+    <div class="grid-container">
+        <!-- Exemplo de quadrado -->
+        <div class="grid-item">
+            <h2>Acordeão</h2>
+            <button onclick="location.href='professoresMusica.html'">Avançar</button>
+        </div>
+        <!-- Repita o bloco acima para cada instrumento -->
+        <div class="grid-item">
+            <h2>Baixo</h2>
+            <button onclick="location.href='pagina-baixo.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Bandolim</h2>
+            <button onclick="location.href='pagina-bandolim.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Banjo</h2>
+            <button onclick="location.href='pagina-banjo.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Bateria</h2>
+            <button onclick="location.href='pagina-bateria.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Canto</h2>
+            <button onclick="location.href='pagina-canto.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Cavaco</h2>
+            <button onclick="location.href='pagina-cavaco.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Cello</h2>
+            <button onclick="location.href='pagina-cello.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Clarinete</h2>
+            <button onclick="location.href='pagina-clarinete.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Fagote</h2>
+            <button onclick="location.href='pagina-fagote.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Flauta</h2>
+            <button onclick="location.href='pagina-flauta.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Flauta Doce</h2>
+            <button onclick="location.href='pagina-flauta-doce.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Flauta Transversal</h2>
+            <button onclick="location.href='pagina-flauta-transversal.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Gaita</h2>
+            <button onclick="location.href='pagina-gaita.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Guitarra</h2>
+            <button onclick="location.href='pagina-guitarra.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Harpa</h2>
+            <button onclick="location.href='pagina-harpa.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Oboé</h2>
+            <button onclick="location.href='pagina-oboe.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Órgão</h2>
+            <button onclick="location.href='pagina-orgao.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Piano</h2>
+            <button onclick="location.href='pagina-piano.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Saxofone</h2>
+            <button onclick="location.href='pagina-saxofone.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Teclado</h2>
+            <button onclick="location.href='pagina-teclado.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Teoria Musical</h2>
+            <button onclick="location.href='pagina-teoria-musical.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Trombone</h2>
+            <button onclick="location.href='pagina-trombone.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Trompete</h2>
+            <button onclick="location.href='pagina-trompete.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Tuba</h2>
+            <button onclick="location.href='pagina-tuba.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Ukulele</h2>
+            <button onclick="location.href='pagina-ukulele.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Violão</h2>
+            <button onclick="location.href='pagina-violao.html'">Avançar</button>
+        </div>
+        <div class="grid-item">
+            <h2>Violino</h2>
+            <button onclick="location.href='pagina-violino.html'">Avançar</button>
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> ae9eeb8526be86d3949a80e590730cd0d216bc90

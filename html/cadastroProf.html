@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -146,3 +147,153 @@
     </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Professor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('../img/backgroundCadastroUsu.jpg'); /* Certifique-se de que o caminho está correto */
+            background-size: cover;
+            background-position: center;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 20px; /* Ajuste a altura do menu alterando o padding */
+            background: rgba(0, 0, 0, 0.1); /* Transparência do menu */
+        }
+        .menu .logo {
+            width: 200px; /* Ajuste conforme necessário */
+        }
+        .menu ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .menu ul li {
+            margin: 0 15px;
+        }
+        .menu ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura disponível */
+        }
+        .form-box {
+            background: rgba(51, 48, 48, 0.6); /* Cor do quadrado com 60% de transparência */
+            padding: 20px;
+            border-radius: 30px; /* Curvatura do quadrado principal */
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .form-box h2 {
+            color: white;
+            text-align: center;
+        }
+        .form-box label {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-box input, .form-box select, .form-box textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 20px; /* Curvatura dos campos */
+            background: rgba(88, 218, 226, 0.4); /* Cor dos campos com 40% de transparência */
+        }
+        .form-box .small-inputs {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-box .small-inputs input,
+        .form-box .small-inputs select {
+            width: 30%;
+        }
+        .form-box .long-inputs {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-box .long-inputs input,
+        .form-box .long-inputs select {
+            width: 32%;
+        }
+        .form-box textarea {
+            height: 100px; /* Altura do campo de descrição */
+        }
+        .form-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 40px; /* Curvatura do botão */
+            background: #58DAE2; /* Cor do botão */
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <img src="../img/logoo.png" alt="Logo" class="logo"> <!-- Troque 'sua-logo.png' pela sua logo -->
+        <ul>
+            <li><a href="index.html" class="active">Inicial</a></li>
+            <li><a href="categoria.html">Categorias</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="projetos.html">Projetos Sociais</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </div>
+    <br><br><br><br>
+    <div class="form-container">
+        <div class="form-box">
+            <h2>Cadastro Professor</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <div class="small-inputs">
+                <input type="text" id="estado" name="estado" placeholder="Estado">
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade">
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro">
+            </div>
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
+            <div class="long-inputs">
+                <select id="area-ensino" name="area-ensino">
+                    <option value="" disabled selected>Área de Ensino</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+                <select id="categoria" name="categoria">
+                    <option value="" disabled selected>Categoria</option>
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                    <option value="noite">Noite</option>
+                </select>
+                <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
+            </div>
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" maxlength="300" placeholder="Máximo de 300 caracteres"></textarea>
+            <button type="submit">Concluir</button>
+        </div>
+    </div>
+</body>
+</html>
+>>>>>>> ae9eeb8526be86d3949a80e590730cd0d216bc90
