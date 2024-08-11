@@ -1,14 +1,16 @@
 <?php
-    $hostname = "localhost";
-    $bancodedados = "aldors";
-    $usuario = "root";
-    $senha = "";
+$hostname = "localhost";
+$bancodedados = "aldors";
+$usuario = "root";
+$senha = "";
 
-    $mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
-    if ($mysqli->connect_errno) {
-        echo "falha ao conectar:(" . $mysqli->connect_errno . ")" . $mysqli->connect_errno;
-    }
-    else
-        echo "Conectado ao Banco de Dados";
+// Cria a conexão
+$mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
 
+// Verifica a conexão
+if ($mysqli->connect_errno) {
+    echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+} else {
+    echo "Conectado ao Banco de Dados";
+}
 ?>

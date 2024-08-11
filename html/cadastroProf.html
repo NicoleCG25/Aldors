@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,96 +10,145 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-image: url('../img/backgroundCadastroUsu.jpg'); /* Certifique-se de que o caminho está correto */
+            background-image: url('../img/backgroundCadastroUsu.jpg');
             background-size: cover;
             background-position: center;
         }
+
         .menu {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2px 20px; /* Ajuste a altura do menu alterando o padding */
-            background: rgba(0, 0, 0, 0.1); /* Transparência do menu */
+            padding: 2px 20px;
+            background: rgba(0, 0, 0, 0.1);
         }
+
         .menu .logo {
-            width: 200px; /* Ajuste conforme necessário */
+            width: 200px;
         }
+
         .menu ul {
             list-style: none;
             display: flex;
             margin: 0;
             padding: 0;
         }
+
         .menu ul li {
             margin: 0 15px;
         }
+
         .menu ul li a {
             color: white;
             text-decoration: none;
         }
+
         .form-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Altura disponível */
+            height: 100vh;
         }
+
         .form-box {
-            background: rgba(51, 48, 48, 0.6); /* Cor do quadrado com 60% de transparência */
+            background: rgba(51, 48, 48, 0.6);
             padding: 20px;
-            border-radius: 30px; /* Curvatura do quadrado principal */
+            border-radius: 30px;
             width: 400px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
+
         .form-box h2 {
             color: white;
             text-align: center;
         }
+
         .form-box label {
             color: white;
             display: block;
             margin-bottom: 5px;
         }
-        .form-box input, .form-box select, .form-box textarea {
+
+        .form-box input,
+        .form-box select,
+        .form-box textarea {
             width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 10px;
             border: none;
-            border-radius: 20px; /* Curvatura dos campos */
-            background: rgba(88, 218, 226, 0.4); /* Cor dos campos com 40% de transparência */
+            border-radius: 20px;
+            background: rgba(88, 218, 226, 0.4);
         }
+
         .form-box .small-inputs {
             display: flex;
             justify-content: space-between;
         }
-        .form-box .small-inputs input,
-        .form-box .small-inputs select {
+
+        .form-box .small-inputs input {
             width: 30%;
         }
+
         .form-box .long-inputs {
             display: flex;
             justify-content: space-between;
         }
+
         .form-box .long-inputs input,
         .form-box .long-inputs select {
             width: 32%;
         }
+
         .form-box textarea {
-            height: 100px; /* Altura do campo de descrição */
+            height: 100px;
         }
+
         .form-box button {
             width: 100%;
             padding: 10px;
             border: none;
-            border-radius: 40px; /* Curvatura do botão */
-            background: #58DAE2; /* Cor do botão */
+            border-radius: 40px;
+            background: #58DAE2;
             color: white;
             font-size: 16px;
         }
+
+        .submit-btn {
+            padding: 20px 60px;
+            opacity: 0.99;
+            background: #7F3A6B;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
     </style>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            var form = document.getElementById('evento-form');
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Formulário enviado com sucesso');
+                    window.location.href = 'index.html'; // Redireciona após o envio
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        }
+    </script>
 </head>
+
 <body>
     <div class="menu">
-        <img src="../img/logoo.png" alt="Logo" class="logo"> <!-- Troque 'sua-logo.png' pela sua logo -->
+        <img src="../img/logoo.png" alt="Logo" class="logo">
         <ul>
             <li><a href="index.html" class="active">Inicial</a></li>
             <li><a href="categoria.html">Categorias</a></li>
@@ -109,40 +159,46 @@
     </div>
     <br><br><br><br>
     <div class="form-container">
-        <div class="form-box">
+        <form class="form-box" action="../php/formularioProfessor.php" method="post" id="evento-form"
+            onsubmit="handleFormSubmit(event)">
             <h2>Cadastro Professor</h2>
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
             <div class="small-inputs">
-                <input type="text" id="estado" name="estado" placeholder="Estado">
-                <input type="text" id="cidade" name="cidade" placeholder="Cidade">
-                <input type="text" id="bairro" name="bairro" placeholder="Bairro">
+                <input type="text" id="estado" name="estado" placeholder="Estado" required>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
             </div>
-            <label for="data-nascimento">Data de Nascimento:</label>
-            <input type="date" id="data-nascimento" name="data-nascimento">
+            <label for="dataNasc">Data de Nascimento:</label>
+            <input type="date" id="dataNasc" name="dataNasc" required>
             <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha">
+            <input type="password" id="senha" name="senha" required>
+            <label for="preco">Preço por Aula:</label>
+            <input type="number" id="preco" name="preco" step="0.01" required>
             <div class="long-inputs">
-                <select id="area-ensino" name="area-ensino">
+                <select id="areaEnsino" name="areaEnsino" required>
                     <option value="" disabled selected>Área de Ensino</option>
-                    <option value="manha">Manhã</option>
-                    <option value="tarde">Tarde</option>
-                    <option value="noite">Noite</option>
+                    <option value="manha">Música e Instrumentos</option>
+                    <option value="tarde">Dança</option>
+                    <option value="noite">Artes Cênicas</option>
+                    <option value="noite">Artes Plásticas</option>
                 </select>
-                <select id="categoria" name="categoria">
+                <select id="categoria" name="categoria" required>
                     <option value="" disabled selected>Categoria</option>
                     <option value="manha">Manhã</option>
                     <option value="tarde">Tarde</option>
                     <option value="noite">Noite</option>
                 </select>
-                <input type="tel" id="telefone" name="telefone" placeholder="Telefone">
+                <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
             </div>
             <label for="descricao">Descrição:</label>
-            <textarea id="descricao" name="descricao" maxlength="300" placeholder="Máximo de 300 caracteres"></textarea>
-            <button type="submit">Concluir</button>
-        </div>
+            <textarea id="descricao" name="descricao" maxlength="300" placeholder="Máximo de 300 caracteres"
+                required></textarea>
+            <button class="submit-btn" type="submit">Concluir</button>
+        </form>
     </div>
 </body>
+
 </html>
