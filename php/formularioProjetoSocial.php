@@ -1,27 +1,36 @@
 <?php
 include("conexao.php");
 
-$nomeprojeto = $_POST['nomeprojeto'];
 $nome = $_POST['nome'];
 $estado = $_POST['estado'];
 $cidade = $_POST['cidade'];
-$telefone = $_POST['telefone'];
-$areaEnsino = $_POST['areaEnsino'];
+$areaArtistica = $_POST['areaArtistica'];
 $categoria = $_POST['categoria'];
+$nomeAdministrador = $_POST['nomeAdministrador'];
 $bairro = $_POST['bairro'];
-$dataNasc = $_POST['dataNasc'];
 $descricao = $_POST['descricao'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
+$rua = $_POST['rua'];
+$telefone = $_POST['telefone'];
 
-$sql = "INSERT INTO projetoSocial (nomeprojeto, nome, estado, cidade, telefone, areaEnsino, categoria, bairro, data_nasc, descricao, email, senha) 
-VALUES ('$nomeprojeto', '$nome', '$estado', '$cidade', '$telefone', '$areaEnsino', '$categoria', '$bairro', '$dataNasc', '$descricao', '$email', '$senha')";
+echo "Nome: $nome<br>";
+echo "Estado: $estado<br>";
+echo "Cidade: $cidade<br>";
+echo "Bairro: $bairro<br>";
+echo "Telefone: $telefone<br>";
+echo "Categoria: $categoria<br>";
+echo "Descrição: $descricao<br>";
 
-if ($conn->query($sql) === TRUE) {
-    echo "<h1>Formulário enviado com sucesso!</h1>";
+$sql = "INSERT INTO projetoSocial (nome, estado, cidade, areaArtistica, categoria, nomeAdministrador, bairro, descricao, rua, telefone) 
+VALUES ('$nome', '$estado', '$cidade', '$areaArtistica', '$categoria', '$nomeAdministrador', '$bairro', '$descricao', '$rua', '$telefone')";
+echo "SQL: $sql<br>";
+
+if ($mysqli->query($sql) === TRUE) {
+    // Redireciona para index.html após sucesso
+    header("Location: ../html/index.html");
+    exit(); // Garante que o script PHP pare aqui
 } else {
-    echo "Erro: " . $sql . "<br>" . $conn->error;
+    echo "Erro: " . $sql . "<br>" . $mysqli->error;
 }
 
-$conn->close();
+$mysqli->close();
 ?>

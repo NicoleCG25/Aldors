@@ -12,7 +12,7 @@ $areaEnsino = $_POST['areaEnsino'];
 $categoria = $_POST['categoria'];
 $descricao = $_POST['descricao'];
 
-// Verifique se os dados estão sendo capturados corretamente
+// Para verificar se os dados estão sendo capturados corretamente
 echo "Nome do Evento: $nomeEvento<br>";
 echo "Estado: $estado<br>";
 echo "Cidade: $cidade<br>";

@@ -1,14 +1,6 @@
 <?php
 include("conexao.php");
 
-// Verifica se a conexão foi estabelecida
-if (!$conn) {
-    die("Erro na conexão: " . mysqli_connect_error());
-}
-
-// Verifica se os dados foram enviados
-var_dump($_POST); // Adicione esta linha para depuração
-
 // Coleta os dados do formulário
 $nome = $_POST['nome'];
 $estado = $_POST['estado'];
@@ -23,17 +15,27 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 $telefone = $_POST['telefone'];
 
+echo "Nome: $nome<br>";
+echo "Estado: $estado<br>";
+echo "Cidade: $cidade<br>";
+echo "Bairro: $bairro<br>";
+echo "Telefone: $telefone<br>";
+echo "Área de Ensino: $areaEnsino<br>";
+echo "Categoria: $categoria<br>";
+echo "Descrição: $descricao<br>";
+
 // Prepara a query SQL para inserir os dados
 $sql = "INSERT INTO Professor (Nome, Estado, Cidade, areaEnsino, Categoria, Bairro, DataNasc, Descricao, Preco, Email, Senha, Telefone) 
 VALUES ('$nome', '$estado', '$cidade', '$areaEnsino', '$categoria', '$bairro', '$dataNasc', '$descricao', '$preco', '$email', '$senha', '$telefone')";
 
-if ($conn->query($sql) === TRUE) {
+
+if ($mysqli->query($sql) === TRUE) {
     // Redireciona para index.html após sucesso
     header("Location: ../html/index.html");
     exit(); // Garante que o script PHP pare aqui
 } else {
-    echo "Erro: " . $sql . "<br>" . $conn->error;
+    echo "Erro: " . $sql . "<br>" . $mysqli->error;
 }
 
-$conn->close();
+$mysqli->close();
 ?>
