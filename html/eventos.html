@@ -22,11 +22,22 @@
     <!-- ARQUIVO CSS PARA ESTILIZAR O SISTEMA -->
     <style>
         /* Estilos Globais */
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-        }
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Configuração Padrão do Sistema Web */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('../img/backgroundIndex.jpeg');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
 
         /* Estilo da imagem */
         .background-image {
@@ -76,16 +87,35 @@
 
         /* Ajustando os botões do cabeçalho */
         .menu ul li {
-            margin: 0 15px;
+            margin: 0 25px;
         }
 
         /* Estilizando os links de navegação */
         .menu ul li a {
             color: rgb(255, 255, 255);
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
+
         }
+
+                /* Estilizando os botoẽs de Navegação*/
+                nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+        /* Complemento da classe anterior*/
+        nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+        /* Definindo uma cor para os botoẽs*/
+        nav ul li a:hover {
+      color: #ccc;
+    }
 
         /* Ajustando o botão ativo do cabeçalho */
         .menu ul li a.active {
@@ -348,9 +378,9 @@
         <!-- Navegação entre as páginas do site -->
         <nav aria-label="Primary">
             <ul>
-                <li><a href="index.html" class="active">Inicial</a></li>
+                <li><a href="index.html">Inicial</a></li>
                 <li><a href="categoria.html">Categorias</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="eventos.html" class="active">Eventos</a></li>
                 <li><a href="projetosSociais.html">Projetos Sociais</a></li>
                 <li><a href="cadastros.html">Perfil</a></li>
             </ul>
