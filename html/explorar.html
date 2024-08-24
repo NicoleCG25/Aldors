@@ -22,42 +22,67 @@
         font-family: 'Poppins', sans-serif;
     }
 
+
+    /* Classe de estilização do cabeçalho */
     .menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: black;
-        /* Fundo semi-transparente para o menu */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: black;
     }
-
+    /* Definindo o tamanho da logo no cabeçalho */
     .menu .logo {
-        width: 200px;
+      width: 200px;
     }
 
+    /* Classe para estilizar o botoẽs para aceesar outras paginas */
     .menu ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
     }
 
+    /* Ajustando os botoẽs do cabeçalho */
     .menu ul li {
-        margin: 0 15px;
+      margin: 0 15px;
     }
 
+    /* Classe também utilizada para estilizar o botoẽs */
     .menu ul li a {
-        color: rgb(255, 255, 255);
-        text-decoration: none;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
     }
 
-    .logo img {
-        height: 90px;
-        width: auto;
+    /* Estilizando os botoẽs de Navegação*/
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
     }
 
+    /* Complemento da classe anterior*/
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Definindo uma cor para os botoẽs*/
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
     nav ul li a.active {
-        color: #6F2159
+      color: #6F2159;
+    }
+
+    /**/
+    .logo img {
+      height: 90px;
+      width: auto;
     }
 </style>
 
@@ -202,8 +227,6 @@
 
         </section>
     </div>
-
-
 
 </body>
 
