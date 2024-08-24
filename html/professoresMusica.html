@@ -25,42 +25,67 @@
             background-size: cover;
         }
 
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: black;
-        }
+    /* Classe de estilização do cabeçalho */
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: black;
+    }
+    /* Definindo o tamanho da logo no cabeçalho */
+    .menu .logo {
+      width: 200px;
+    }
 
-        .menu .logo {
-            width: 200px;
-        }
+    /* Classe para estilizar o botoẽs para aceesar outras paginas */
+    .menu ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
 
-        .menu ul {
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
+    /* Ajustando os botoẽs do cabeçalho */
+    .menu ul li {
+      margin: 0 15px;
+    }
 
-        .menu ul li {
-            margin: 0 15px;
-        }
+    /* Classe também utilizada para estilizar o botoẽs */
+    .menu ul li a {
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
 
-        .menu ul li a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-        }
+    /* Estilizando os botoẽs de Navegação*/
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        .logo img {
-            height: 90px;
-            width: auto;
-        }
+    /* Complemento da classe anterior*/
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
 
-        nav ul li a.active {
-            color: #6F2159
-        }
+    /* Definindo uma cor para os botoẽs*/
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
+    nav ul li a.active {
+      color: #6F2159;
+    }
+
+    /**/
+    .logo img {
+      height: 90px;
+      width: auto;
+    }
 
         .container {
             display: flex;
@@ -162,21 +187,27 @@
     </style>
 </head>
 <body>
-    <div class="menu">
-        <div class="logo">
-            <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
-        </div>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="index.html">Inicial</a></li>
-                <li><a href="categoria.html" class="active">Categorias</a></li>
-                <li><a href="eventos.html">Eventos</a></li>
-                <li><a href="projetos.html">Projetos Sociais</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="perfil.html">Perfil</a></li>
-            </ul>
-        </nav>
+
+  <!--Inicio do menu (cabeçalho)-->
+  <div class="menu">
+    <div class="logo">
+      <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
     </div>
+
+    <!--Navegação entre as pagínas do site-->
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Inicial</a></li>
+        <li><a href="categoria.html" class="active">Categorias</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="projetosSociais.html">Projetos Sociais</a></li>
+        <li><a href="sobreNos.html">Sobre Nós</a></li>
+        <li><a href="Logins.html">Perfil</a></li>
+      </ul>
+    </nav>
+    <!--Fim do cabeçalho-->
+  </div>
+  
     <div class="container">
         <div class="rectangle">
             <div class="rectangle-header">
@@ -398,5 +429,3 @@
     </div>
 </body>
 </html>
-
-
