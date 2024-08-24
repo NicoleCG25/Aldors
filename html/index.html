@@ -19,8 +19,8 @@
   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
- <!--ARQUIVO CSS PARA ESTILIZAR O SISTEMA-->
- <style>
+  <!--ARQUIVO CSS PARA ESTILIZAR O SISTEMA-->
+  <style>
 
     /* Estilos Globais */
     * {
@@ -71,6 +71,36 @@
     .menu ul li a {
       color: rgb(255, 255, 255);
       text-decoration: none;
+    }
+
+    /* Estilizando os botoẽs de Navegação*/
+    nav ul {
+      list-style-type: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    /* Complemento da classe anterior*/
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    /* Definindo uma cor para os botoẽs*/
+    nav ul li a:hover {
+      color: #ccc;
+    }
+
+    /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
+    nav ul li a.active {
+      color: #6F2159;
+    }
+
+    /**/
+    .logo img {
+      height: 90px;
+      width: auto;
     }
 
     /* Configuração Padrão do Rodapé*/
@@ -145,12 +175,6 @@
       margin-left: 4%;
       color: white;
     }
-
-    /**/
-    .logo img {
-      height: 90px;
-      width: auto;
-    }
   
     /* Ajustando a posição da logo no rodape*/
     .logo-rodape {
@@ -173,31 +197,6 @@
     /* Definindo uma cor de fundo entre as sessões*/
     .fundo-home {
       background-color: #000;
-    }
-
-    /* Estilizando os botoẽs de Navegação*/
-    nav ul {
-      list-style-type: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    /* Complemento da classe anterior*/
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    /* Definindo uma cor para os botoẽs*/
-    nav ul li a:hover {
-      color: #ccc;
-    }
-
-    /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
-    nav ul li a.active {
-      color: #6F2159;
     }
 
     /* Classe usada para criar o quadro 1*/
@@ -498,7 +497,7 @@
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="projetosSociais.html">Projetos Sociais</a></li>
         <li><a href="sobreNos.html">Sobre Nós</a></li>
-        <li><a href="cadastros.html">Perfil</a></li>
+        <li><a href="Logins.html">Perfil</a></li>
       </ul>
     </nav>
     <!--Fim do cabeçalho-->
