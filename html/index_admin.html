@@ -24,6 +24,9 @@
         /* Estilos Globais */
         body {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             font-family: 'Poppins', sans-serif;
             color: white;
             background: url('../img/fundoCategoria.jpg') no-repeat center center fixed;
@@ -46,30 +49,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            /* Fundo escuro com transparência para o cabeçalho */
-            position: fixed;
-            /* Fixa o cabeçalho no topo da página */
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            /* Garante que o cabeçalho fique acima do conteúdo */
+            background-color: black;
         }
 
-        /* Definindo o tamanho da logo no cabeçalho */
         .menu .logo {
             width: 200px;
         }
 
-        .menu .logo img {
-            width: 100%;
-            /* Ajusta a largura da imagem para preencher o espaço da logo */
-            height: auto;
-            /* Mantém a proporção da imagem */
-        }
-
-        /* Classe para estilizar os botões de navegação no cabeçalho */
         .menu ul {
             list-style: none;
             display: flex;
@@ -77,22 +63,22 @@
             padding: 0;
         }
 
-        /* Ajustando os botões do cabeçalho */
         .menu ul li {
             margin: 0 15px;
         }
 
-        /* Estilizando os links de navegação */
         .menu ul li a {
             color: rgb(255, 255, 255);
             text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
         }
 
-        /* Ajustando o botão ativo do cabeçalho */
-        .menu ul li a.active {
-            color: #6F2159;
+        .logo img {
+            height: 90px;
+            width: auto;
+        }
+
+        nav ul li a.active {
+            color: #6F2159
         }
 
         /* Estilo da faixa de título */
@@ -244,13 +230,13 @@
             /* Cor de fundo do botão ao passar o mouse */
         }
 
-                /* Estilo da faixa de título */
-                .title-container {
+        /* Estilo da faixa de título */
+        .title-container {
             background-color: rgba(0, 0, 0, 0.6);
             padding: 20px;
             text-align: center;
             color: white;
-            margin-top: 70px;
+            margin-top: 0px;
             position: relative;
             z-index: 500;
         }
@@ -361,15 +347,14 @@
         <div class="logo">
             <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
         </div>
-
-        <!-- Navegação entre as páginas do site -->
         <nav aria-label="Primary">
             <ul>
                 <li><a href="index.html" class="active">Inicial</a></li>
-                <li><a href="cadastros.html">Perfil</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
             </ul>
         </nav>
-        <!-- Fim do cabeçalho -->
+    </div>
+    <!-- Fim do cabeçalho -->
     </div>
 
     <div class="title-container">

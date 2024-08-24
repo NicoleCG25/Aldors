@@ -1,33 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Aldors - Plataforma de projetos sociais, eventos e categorias.">
-    
-     <title>Cadastro de Eventos</title>
+
+    <title>Cadastro Eventos</title> <!--TITULO DO SITE-->
 
     <link rel="shortcut icon" href="../img/logoo.png" type="image/x-icon"> <!--COLOCANDO A LOGO-->
 
     <!--------------------------------LINK DA FONTE DAS PALAVRAS------------------------------------>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    
-    <!--------------------------------LINKS DO BOOTSTRAP-------------------------------------------->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
 
-    <!--ARQUIVO CSS PARA ESTILIZAR O SISTEMA-->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+        body,
+        html {
             margin: 0;
             padding: 0;
             width: 100%;
@@ -35,37 +24,23 @@
             font-family: 'Poppins', sans-serif;
             background: url('../img/backgroundForm.jpeg') no-repeat center center fixed;
             background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-            
-        /* Classe de estilização do cabeçalho */
-        .menu {                  
-            justify-content: space-between;     
-            align-items: center;
-            display: flex;
-            padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            position: fixed;/* Fixa o cabeçalho no topo da página */
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;/* Garante que o cabeçalho fique acima do conteúdo */
+            box-sizing: border-box;
+            overflow-x: hidden;
         }
 
-        /* Definindo o tamanho da logo no cabeçalho */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: black;
+            /* Fundo semi-transparente para o menu */
+        }
+
         .menu .logo {
             width: 200px;
         }
 
-        .menu .logo img {
-            width: 100%;
-            /* Ajusta a largura da imagem para preencher o espaço da logo */
-            height: auto;
-            /* Mantém a proporção da imagem */
-        }
-
-        /* Classe para estilizar o botoẽs para aceesar outras paginas */
         .menu ul {
             list-style: none;
             display: flex;
@@ -73,40 +48,29 @@
             padding: 0;
         }
 
-        /* Ajustando os botoẽs do cabeçalho */
         .menu ul li {
-            margin: 0 25px;
+            margin: 0 15px;
         }
 
-        /* Classe também utilizada para estilizar o botoẽs */
         .menu ul li a {
             color: rgb(255, 255, 255);
             text-decoration: none;
         }
 
-        /* Estilizando os botoẽs de Navegação*/
-        nav ul {
-            list-style-type: none;
-            display: flex;
-            gap: 20px;
+        .logo img {
+            height: 90px;
+            width: auto;
         }
 
-        /* Complemento da classe anterior*/
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        /* Definindo uma cor para os botoẽs*/
-        nav ul li a:hover {
-            color: #ccc;
-        }
-
-        /* Deixando a escrita do botão roxo de acordo com a pagina atual*/
         nav ul li a.active {
-            color: #6F2159;
+            color: #6F2159
+        }
+
+
+        .title {
+            font-size: 36px;
+            margin-top: 20px;
+            padding: 2%;
         }
 
         .container {
@@ -117,30 +81,32 @@
             height: 100%;
             text-align: center;
             color: white;
-            margin-bottom: 10%;
-        }
-
-        .title {
-            font-size: 25px;
-            margin-top:  0.5px;
+            position: relative;
+            /* Adicione isto para garantir que .divider se alinhe corretamente */
         }
 
         .divider {
-            width: 120%;
-            border-top: 4px solid white;
-            margin: 20px 0;
+            position: absolute;
+            /* Garante que a linha se estenda por toda a largura da página */
+            top: 100px;
+            /* Ajuste conforme necessário para a posição vertical desejada */
+            left: 0;
+            width: 100vw;
+            /* Garante que a linha se estenda por toda a largura da viewport */
+            border-top: 1px solid white;
+            margin: 0;
+            box-sizing: border-box;
+            /* Inclui o padding e border no cálculo da largura total */
         }
 
         .form-container {
-            width: 800px;
-            height: 1100px;
+            width: 1000px;
+            height: 820px;
             opacity: 0.70;
             background: #5F4646;
             border-radius: 20px;
             padding: 20px;
-            margin-left: 1%;
             display: flex;
-            text-align: center;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -196,150 +162,35 @@
             color: white;
             cursor: pointer;
         }
-
-        /* Configuração Padrão do Rodapé*/
-        .rodape {
-            background-color: #010101;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        /* Estilizando os itens dentro do rodapé*/
-        .body-rodape {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color:#fff
-        }
-
-        /* Primeira parte do rodape com a logo */
-        .container-rodape-1 {
-            width: 50%;
-            margin-left: 5%;
-        }
-
-        /* Segunda parte do rodape com informações dos criadores */
-        .container-rodape-2 {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-left: 17%
-        }
-
-        /* Definindo um tamanho padrão para as palavras*/
-        .apresentacao-rodape,
-        .escrita-rodape,
-        .container-rodape-2 small {
-            font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
-        }
-
-        /* Estilizando os icones das outras redes socias do Projeto*/
-        .redes-sociais {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        /* Ajustando os icones do rodape*/
-        .redes-sociais a {
-            margin: 0 5px;
-        }
-
-        /* Ajustando o tamanho dos icones */
-        .redes-sociais img {
-            width: 30px; /* Ajuste o tamanho das imagens das redes sociais conforme necessário */
-        }
-
-        /* Classe para mudar a cor da linha no rodape*/
-        hr {
-            border-color: white;
-        }
-
-        /* Estilizando o ano e nome do projeto no final da pagina*/
-        .final-pagina {
-            margin-top: 10px;
-        }
-
-        /* Ajustando a posição e cor do texto dentro da 1º sessão*/
-        .pagina-inicial-texto {
-            margin-left: 4%;
-            color: white;
-        }
-
-        /* Ajustando a posição da logo no rodape*/
-        .logo-rodape {
-            margin-top: 2%;
-        }
-
-        /* Estilizando a escrita no final da pagina*/
-        .final-pagina {
-            text-align: center;
-            color: #fff;
-        }
-
-
     </style>
-
-    <script>
-        function handleFormSubmit(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-
-            var form = document.getElementById('evento-form');
-            var formData = new FormData(form);
-
-            fetch(form.action, {
-                method: form.method,
-                body: formData
-            })
-                .then(response => response.text())
-                .then(data => {
-                    console.log('Formulário enviado com sucesso');
-                    window.location.href = 'index.html'; // Redireciona após o envio
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                });
-        }
-    </script>
 </head>
 
 <body>
-
-    <!--Inicio do menu (cabeçalho)-->
     <div class="menu">
         <div class="logo">
-        <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
+            <a href="index.html"><img src="../img/logoo.png" alt="Logo"></a>
         </div>
-
-        <!--Navegação entre as pagínas do site-->
         <nav aria-label="Primary">
-        <ul>
-            <li><a href="index.html">Inicial</a></li>
-            <li><a href="categoria.html">Categorias</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="projetosSociais.html">Projetos Sociais</a></li>
-            <li><a href="cadastros.html" class="active">Perfil</a></li>
-        </ul>
+            <ul>
+                <li><a href="index.html">Inicial</a></li>
+                <li><a href="categoria.html">Categorias</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="projetos.html">Projetos Sociais</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="perfil.html" class="active">Perfil</a></li>
+            </ul>
         </nav>
-        <!--Fim do cabeçalho-->
     </div>
-
     <div class="container">
-        <br><br><br><br><br><br><br><br><br><br>
-        <div class="title">Cadastrar Eventos</div>
-        <div class="divider"></div>
-        <div class="form-container">
-            <form action="../php/formularioEventos.php" method="post">
-                <br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <form action="../php/formularioEventos.php" method="post">
+            <div class="title">Cadastrar Eventos</div>
+            <div class="divider"></div>
+            <div class="form-container">
                 <div class="form-group">
                     <label for="nome-evento">Nome do Evento</label>
                     <input type="text" id="nome-evento" name="nomeEvento" placeholder="Nome do Evento" required>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="estado">Estado</label>
@@ -350,106 +201,101 @@
                         <input type="text" id="cidade" name="cidade" placeholder="Cidade" required>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="bairro">Bairro</label>
                     <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
                 </div>
-
                 <div class="form-group">
                     <label for="rua">Rua</label>
-                    <input type="text" id="rua" name="rua" placeholder="Rua">
+                    <input type="text" id="rua" name="rua" placeholder="Rua" required>
                 </div>
-
-                <br>
-
                 <div class="form-group">
                     <h4>Informações do(a) Administrador(a): </h4>
                 </div>
-
                 <div class="form-group">
                     <label for="nome-admin">Nome do Administrador</label>
                     <input type="text" id="nome-admin" name="nomeAdmin" placeholder="Nome do Administrador" required>
                 </div>
-
                 <div class="form-group">
                     <label for="telefone">Telefone</label>
                     <input type="text" id="telefone" name="telefone" placeholder="Telefone" required>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="area">Área</label>
                         <select id="area" name="areaEnsino" required>
-                            <option value="instrumentos">Instrumentos</option>
-                            <option value="danca">Dança</option>
-                            <option value="teatro">Teatro</option>
+                            <option value="Música e Instrumentos">Música e Instrumentos</option>
+                            <option value="Dança">Dança</option>
+                            <option value="Artes Cênicas">Artes Cênicas</option>
+                            <option value="Artes Plásticas">Artes Plásticas</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="categoria">Categoria</label>
                         <select id="categoria" name="categoria" required>
-                            <option value="instrumentos">Instrumentos</option>
-                            <option value="danca">Dança</option>
-                            <option value="teatro">Teatro</option>
-                            <option value="canto">Canto</option>
-                            <option value="teoria">Teoria</option>
+                            <option value="" disabled selected>Categoria</option>
+                            <option value="Acordeão">Acordeão</option>
+                            <option value="Baixo">Baixo</option>
+                            <option value="Bandolim">Bandolim</option>
+                            <option value="Banjo">Banjo</option>
+                            <option value="Bateria">Bateria</option>
+                            <option value="Canto">Canto</option>
+                            <option value="Cavaco">Cavaco</option>
+                            <option value="Cello">Cello</option>
+                            <option value="Clarinete">Clarinete</option>
+                            <option value="Fagote">Fagote</option>
+                            <option value="Flauta">Flauta</option>
+                            <option value="Flauta Doce">Flauta Doce</option>
+                            <option value="Flauta Transversal">Flauta Transversal</option>
+                            <option value="Gaita">Gaita</option>
+                            <option value="Guitarra">Guitarra</option>
+                            <option value="Harpa">Harpa</option>
+                            <option value="Oboé">Oboé</option>
+                            <option value="Órgão">Órgão</option>
+                            <option value="Piano">Piano</option>
+                            <option value="Saxofone">Saxofone</option>
+                            <option value="Teclado">Teclado</option>
+                            <option value="Teoria Musical">Teoria Musical</option>
+                            <option value="Trombone">Trombone</option>
+                            <option value="Trompete">Trompete</option>
+                            <option value="Tuba">Tuba</option>
+                            <option value="Ukulele">Ukulele</option>
+                            <option value="Violão">Violão</option>
+                            <option value="Violino">Violino</option>
+                            <option value="Bachata">Bachata</option>
+                            <option value="Balé">Balé</option>
+                            <option value="Bolero">Bolero</option>
+                            <option value="Breakdance">Breakdance</option>
+                            <option value="Capoeira">Capoeira</option>
+                            <option value="Contemporâneo">Contemporâneo</option>
+                            <option value="Dança do Ventre">Dança do Ventre</option>
+                            <option value="Danças de Salão">Danças de Salão</option>
+                            <option value="Danças Latinas">Danças Latinas</option>
+                            <option value="Fandango">Fandango</option>
+                            <option value="Flamenco">Flamenco</option>
+                            <option value="Frevo">Frevo</option>
+                            <option value="Hip-Hop">Hip-Hop</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Kathak">Kathak</option>
+                            <option value="Polka">Polka</option>
+                            <option value="Salsa">Salsa</option>
+                            <option value="Samba">Samba</option>
+                            <option value="Tango">Tango</option>
+                            <option value="Tap Dance">Tap Dance</option>
+                            <option value="Vogue">Vogue</option>
+                            <option value="Waacking">Waacking</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="descricao">Breve Descrição</label>
                     <textarea id="descricao" name="descricao" maxlength="300" placeholder="Descrição"
                         required></textarea>
                 </div>
-
-                <br>
                 <button class="submit-btn" type="submit">Concluir Cadastro</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-
-    <!----------------------------INICIO DO RODAPE----------------------------------------->
-    <footer class="rodape">
-        <div class="body-rodape">
-            <!--1º Divisão do rodape-->
-            <div class="container-rodape-1">
-                <img class="logo-rodape" src="../img/logo.jpg" height="60" width="150">
-                <br>
-
-                <p class="escrita-rodape"><strong>Aldors - Sistema de Valorização da Arte e Cultura</strong></p>
-            </div>
-
-            <!--2º Divisão do rodape-->
-            <div class="container-rodape-2">
-                <br>
-
-                <strong class="apresentacao-rodape"><small>Sobre nós</small></strong>
-                <br>
-            
-                <strong class=""><small>Somos alunos do CEFET-MG...</small></strong>
-            </div>
-
-            <!--3º Divisão do rodape-->
-            <div class="redes-sociais">
-                <strong><small>Redes Sociais</small></strong>
-                <br>
-                <a href="#"><img src="../img/x.png" alt="X"></a>
-                <a href="#"><img src="../img/tiktok.png" alt="TikTok"></a>
-                <a href="#"><img src="../img/email.png" alt="E-mail"></a>
-                <a href="#"><img src="../img/instagram.png" alt="Instagram"></a>
-            </div>
-
-        </div>
-
-    <!----------------------------PARTE FINAL DO RODAPE---------------------------->
-        <hr width="100%" size="5" color="White" />
-
-        <h2 class="final-pagina">&copy; 2024 Aldors</h2>
-
-    </footer> <!--Fim do rodapé-->
-
 </body>
 
 </html>

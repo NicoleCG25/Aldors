@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Aldors - Plataforma de projetos sociais, eventos e categorias.">
 
-    <title>Cadastro</title> <!--TITULO DO SITE-->
+    <title>Login</title> <!--TITULO DO SITE-->
 
     <link rel="shortcut icon" href="../img/logoo.png" type="image/x-icon"> <!--COLOCANDO A LOGO-->
 
@@ -20,10 +20,11 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(62deg, #7F3A6B 0%, white 100%);
-            margin: 0;
             font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
+            background-image: url('../img/backgroundCadastroUsu.jpg');
+            /* Certifique-se de que o caminho está correto */
+            background-size: cover;
+            background-position: center;
         }
 
         .menu {
@@ -32,7 +33,6 @@
             align-items: center;
             padding: 10px 20px;
             background-color: black;
-            /* Fundo semi-transparente para o menu */
         }
 
         .menu .logo {
@@ -68,56 +68,69 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 60px);
-            padding-top: 60px; /* Altura do menu */
+            height: 100vh;
         }
 
-        .quadrado {
-            width: 297px;
-            height: 379px;
-            opacity: 0.50;
-            background: #6F2159;
+        .form-box {
+            background: rgba(51, 48, 48, 0.6);
+            /* Cor do quadrado com 60% de transparência */
+            padding: 20px;
             border-radius: 30px;
-            margin: 0 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            /* Curvatura do quadrado principal */
+            width: 400px;
+            height: 300px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-box h2 {
             color: white;
             text-align: center;
-            font-size: 24px;
-            transition: transform 0.3s, opacity 0.3s;
+            margin-bottom: 20px;
         }
 
-        .quadrado:hover {
-            transform: scale(1.05);
-            opacity: 0.75;
-        }
-
-        .quadrado button {
-            width: 149px;
-            height: 40px;
-            background: #9F6B90;
-            border-radius: 40px;
-            border: none;
+        .form-box label {
             color: white;
-            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-box input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 20px;
+            /* Curvatura dos campos */
+            background: rgba(88, 218, 226, 0.4);
+            /* Cor dos campos com 40% de transparência */
+        }
+
+        .form-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 40px;
+            /* Curvatura do botão */
+            background: #58DAE2;
+            /* Cor do botão */
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            margin-top: 20px;
-            transition: background 0.3s;
         }
 
-        .quadrado button:hover {
-            background: #B582A5;
+        .form-box button:hover {
+            background: #46b8c9;
+            /* Cor do botão ao passar o mouse */
         }
 
-        .quadrados-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
+
 <body>
     <div class="menu">
         <div class="logo">
@@ -135,26 +148,27 @@
         </nav>
     </div>
     <div class="form-container">
-        <div class="quadrados-container">
-            <div class="quadrado">
-                Cadastrar como<br>Usuário<br><br><br> 
-                <button class="button" onclick="window.location.href='cadastroUsu.html'">Avançar</button>
-            </div>
-            <div class="quadrado">
-                Cadastrar como<br>Professor<br><br><br>
-                <button class="button" onclick="window.location.href='cadastroProf.html'">Avançar</button>
-            </div>
-            <div class="quadrado">
-                Cadastrar<br>Projeto Social<br><br><br>
-                <button class="button" onclick="window.location.href='cadastroProjetoSocial.html'">Avançar</button>
-            </div>
-            <div class="quadrado">
-                Cadastrar<br>Evento<br><br><br>
-                <button class="button" onclick="window.location.href='cadastroEvento.html'">Avançar</button>
-            </div>
-        </div>
+        <form class="form-box" action="../php/loginUsuario.php" method="post">
+            <h2>Login</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
+            <button type="submit">Entrar</button>
+
+            <!-- Mensagem de erro, inicialmente oculta -->
+            <p id="error-message" class="error-message" style="display: none;">Falha ao logar! E-mail ou senha
+                incorretos</p>
+        </form>
     </div>
+
+    <script>
+        // Captura parâmetros da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('erro')) {
+            document.getElementById('error-message').style.display = 'block';
+        }
+    </script>
 </body>
+
 </html>
-
-
